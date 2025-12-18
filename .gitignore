@@ -1,51 +1,25 @@
-# --- Java Core ---
-*.class
-*.log
-*.ctxt
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# --- Maven ---
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber
-
-# --- Gradle ---
-.gradle/
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-# --- IntelliJ IDEA ---
-.idea/
-*.iws
-*.iml
-*.ipr
-out/
-
-# --- Eclipse ---
-.metadata
-.classpath
-.project
-.settings/
-.loadpath
+# Build and Debug Folders (CRITICAL to ignore)
 bin/
+obj/
+debug/
+release/
 
-# --- VS Code ---
+# Visual Studio / VS Code specific files
+.vs/
 .vscode/
-.factorypath
+*.user
+*.suo
+*.userprefs
+*.launch
 
-# --- OS Specific ---
+# Test Results
+TestResults/
+*.tr*
+
+# Operating System files
 .DS_Store
 Thumbs.db
+
+# NuGet Packages (if using local packages)
+*.nupkg
+packages/
