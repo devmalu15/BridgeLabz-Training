@@ -1,10 +1,10 @@
 # 📘 Professional Training Log
 
-**Name:** Dev Malu 
-**Role:** Analyst Trainee 
-**Domain:** .NET Full Stack Development  
-**Organization:** Capgemini  
-**Start Date:** December 2025
+**Name:** Dev Malu <br>
+**Role:** Analyst Trainee <br>
+**Domain:** .NET Full Stack Development <br> 
+**Organization:** Capgemini <br> 
+**Start Date:** 16th December, 2025 <br>
 
 ---
 
@@ -24,9 +24,11 @@ This repository serves as a daily log of my technical training and professional 
 ### 🔻 Current Week (Week 1)
 | Date | Topic | Key Learnings & Practical Work | Status |
 | :--- | :--- | :--- | :--- |
-| **Dec 18** | **.NET CLI & C# Basics** | • Setup `.NET 8` SDK and env variables.<br>• Fixed `csc` vs `dotnet` build confusion.<br>• Learned `dotnet new console` vs `dotnet script`.<br>• **Practice:** Created `Abc.cs` and ran via CLI. | ✅ Completed |
-| **Dec 19** | **C# Type System** | • Value types vs Reference types.<br>• String manipulation and Interpolation.<br>• **Practice:** Built a simple calculator. | ⏳ In Progress |
-| **Dec 20** | **OOP Principles** | • Classes, Objects, and Inheritance in C#.<br>• Interface implementation.<br>• **Lab:** Employee Management System (Console). | 📅 Planned |
+| **Dec 16** | **Orientation** | Roadmap and Duration |
+| **Dec 17** | Java to C# | Setup |
+| **Dec 18** | **.NET and C# Basics** | • Setup `.NET 8` SDK and env variables.<br>• Fixed `csc` vs `dotnet` build confusion.<br>• Learned `dotnet new console` vs `dotnet script`. | ✅ Completed |
+| **Dec 19** | **C# Operators, Data Types and TypeCasting** | • 20+ practice problems on operators, data types and type casting. | ✅ Completed |
+| **Dec 20** | **Access Modifiers and Simple Programs** | • 30+ practice problems and access modifier examples | ✅ Completed |
 
 <details>
 <summary><strong>📂 Archive: Previous Weeks (Click to Expand)</strong></summary>
@@ -34,8 +36,8 @@ This repository serves as a daily log of my technical training and professional 
 ### Week 0: Onboarding & Setup
 | Date | Topic | Summary |
 | :--- | :--- | :--- |
-| Dec 15 | HR Induction | Completed paperwork and laptop setup. |
-| Dec 16 | Java to C# | Introduction to syntax differences. |
+| Dec 15 | Orientation | Roadmap and Duration |
+| Dec 16 | Java to C# | Setup |
 
 </details>
 
@@ -56,5 +58,5 @@ This repository serves as a daily log of my technical training and professional 
 ---
 
 <div align="center">
-  <sub>Log maintained by Dev Malu • Last Updated: December 2025</sub>
+  <sub>Log maintained by Dev Malu • Last Updated: 21st December 2025</sub>
 </div>
