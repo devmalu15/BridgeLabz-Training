@@ -21,23 +21,22 @@ This repository serves as a daily log of my technical training and professional 
 
 ## 📅 Daily Progress Log
 
-### 🔻 Current Week (Week 1)
+### 🔻 Current Week (Week 2)
 | Date | Topic | Key Learnings & Practical Work | Status |
 | :--- | :--- | :--- | :--- |
-| **Dec 16** | **Orientation** | Roadmap and Duration |
-| **Dec 17** | Java to C# | Setup |
-| **Dec 18** | **.NET and C# Basics** | • Setup `.NET 8` SDK and env variables.<br>• Fixed `csc` vs `dotnet` build confusion.<br>• Learned `dotnet new console` vs `dotnet script`. | ✅ Completed |
-| **Dec 19** | **C# Operators, Data Types and TypeCasting** | • 20+ practice problems on operators, data types and type casting. | ✅ Completed |
-| **Dec 20** | **Access Modifiers and Simple Programs** | • 30+ practice problems and access modifier examples | ✅ Completed |
+| **Dec 22** | **Control Flow Statements** | 30+ practice problems on if-else, for loop, while loop and switch statements. | in progress |
 
 <details>
 <summary><strong>📂 Archive: Previous Weeks (Click to Expand)</strong></summary>
 
-### Week 0: Onboarding & Setup
+### Week 1: Onboarding, Setup and C# basics
 | Date | Topic | Summary |
 | :--- | :--- | :--- |
-| Dec 15 | Orientation | Roadmap and Duration |
-| Dec 16 | Java to C# | Setup |
+| **Dec 16** | **Orientation** | Roadmap and Duration | ✅ Completed |
+| **Dec 17** | Java to C# | Setup | ✅ Completed |
+| **Dec 18** | **.NET and C# Basics** | • Setup `.NET 8` SDK and env variables.<br>• Fixed `csc` vs `dotnet` build confusion.<br>• Learned `dotnet new console` vs `dotnet script`. | ✅ Completed |
+| **Dec 19** | **C# Operators, Data Types and TypeCasting** | • 20+ practice problems on operators, data types and type casting. | ✅ Completed |
+| **Dec 20** | **Access Modifiers and Simple Programs** | • 30+ practice problems and access modifier examples | ✅ Completed |
 
 </details>
 
@@ -58,5 +57,5 @@ This repository serves as a daily log of my technical training and professional 
 ---
 
 <div align="center">
-  <sub>Log maintained by Dev Malu • Last Updated: 21st December 2025</sub>
+  <sub>Log maintained by Dev Malu • Last Updated: 22nd December 2025</sub>
 </div>
