@@ -3,7 +3,6 @@
 **Name:** Dev Malu <br>
 **Role:** Analyst Trainee <br>
 **Domain:** .NET Full Stack Development <br> 
-**Organization:** Capgemini <br> 
 **Start Date:** 16th December, 2025 <br>
 
 ---
