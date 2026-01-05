@@ -23,10 +23,27 @@ This repository serves as a daily log of my technical training and professional 
 ### 🔻 Current Week (Week 2)
 | Date | Topic | Key Learnings & Practical Work | Status |
 | :--- | :--- | :--- | :--- |
-| **Dec 22** | **Control Flow Statements** | 30+ practice problems on if-else, for loop, while loop and switch statements. | in progress |
+| **Dec 29** | **Scenario Based** | Solved two scenario based problems i.e., temperature analyzer and test score manager. | ✅ Completed |
+| **Dec 30** | **Scenario Based and Constructors** | Constructor problems and two scenario based problems i.e., Library Management System and EduQuiz | ✅ Completed |
+| **Dec 31** | **Scenario Based and this, sealed and static keyword** | practice problems on this, sealed and static keyword and two scenario based problems i.e., Banking System, Maths Utility and Invoice Generator. | ✅ Completed |
+| **Jan 01** | **Object Modelling and Scenario Based** | Practice problems on Object modelling, classes and access modifiers and Cafetaria Menu App. | ✅ Completed |
+| **Jan 02** | **Review and Inheritence** | Practice problems on Inheritence and Scenario Based in review i.e., Amazon Pay Payment gateway. | ✅ Completed |
+| **Jan 03** | **Scenario Based** | Two scenario based problems, i.e., Bus Route Distance Tracker and Festive Lucky Draw. | ✅ Completed |
+
 
 <details>
 <summary><strong>📂 Archive: Previous Weeks (Click to Expand)</strong></summary>
+
+### Week 2: 
+| Date | Topic | Key Learnings & Practical Work | Status |
+| :--- | :--- | :--- | :--- |
+| **Dec 22** | **Control Flow Statements** | 30+ practice problems on if-else, for loop, while loop and switch statements. | ✅ Completed |
+| **Dec 23** | **Arrays** | practice problems on arrays in c#. | ✅ Completed |
+| **Dec 24** | **Methods** | practice problems on methods in c#. | ✅ Completed |
+| **Dec 26** | **Strings, BuiltIn Methods and Scenario Based** | 30+ practice problems on strings and BuiltIn Methods and created a snake and ladder game. | ✅ Completed |
+| **Dec 27** | **ScenarioBased** | created a console based snake and ladder game. | ✅ Completed |
+| **Dec 28** | **Arrays** | 30+ practice problems on if-else, for loop, while loop and switch statements. | ✅ Completed |
+
 
 ### Week 1: Onboarding, Setup and C# basics
 | Date | Topic | Summary |
