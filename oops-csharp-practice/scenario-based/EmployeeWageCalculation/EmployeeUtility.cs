@@ -29,7 +29,8 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
                 Console.WriteLine("2. Process Work Hours (Randomly assigns hours for present days)");
                 Console.WriteLine("3. Calculate & Show Monthly Wages");
                 Console.WriteLine("4. Show All Details (Summary)");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("5. Check Condition (20 Days Present OR 100 Hours Worked)");
+                Console.WriteLine("6. Exit");
                 Console.Write("Enter choice: ");
 
                 int choice;
@@ -43,7 +44,6 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
                 {
                     case 1:
                         // --- Add Employee ---
-                        // Uses the new AddEmployee method which sets up the 20-day boolean array
                         if (employeeCount < 1000)
                         {
                             employees[employeeCount] = obj.AddEmployee();
@@ -56,7 +56,7 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
                         break;
 
                     case 2:
-                        // --- Update Hours (Search by ID) ---
+                        // --- Update Hours ---
                         if (employeeCount == 0)
                         {
                             Console.WriteLine("No employees found. Please add an employee first.");
@@ -73,12 +73,8 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
                             {
                                 found = true;
                                 Console.WriteLine($"Found Employee: {employees[i].employeeName}");
-
-                                // NEW LOGIC: We don't ask user for hours anymore.
-                                // We call AddHours which randomly assigns 4-9 hours for every 'Present' day in the array.
                                 obj.AddHours(employees[i]);
-
-                                Console.WriteLine("Success: Random work hours generated for all 'Present' days in the month.");
+                                Console.WriteLine("Success: Random work hours generated for all 'Present' days.");
                                 break;
                             }
                         }
@@ -100,19 +96,8 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
                             Console.WriteLine("\n--- Monthly Wage Report ---");
                             for (int i = 0; i < employeeCount; i++)
                             {
-                                // 1. Calculate Monthly Total
                                 int monthlyWage = obj.CalculateMonthlyWage(employees[i]);
-
-                                // 2. Calculate Daily Breakdown (demonstrating use of the method)
-                                int[] dailyWages = obj.CalculateDailyWage(employees[i]);
-
-                                Console.WriteLine($"\nID: {employees[i].employeeID} | Name: {employees[i].employeeName}");
-                                Console.WriteLine($"Total Monthly Wage: {monthlyWage}");
-
-                                // Optional: Show first 5 days as a sample
-                                Console.Write("Daily Wage Sample (First 5 days): ");
-                                for (int d = 0; d < 5; d++) Console.Write(dailyWages[d] + " ");
-                                Console.WriteLine("...");
+                                Console.WriteLine($"ID: {employees[i].employeeID} | Name: {employees[i].employeeName} | Total Wage: {monthlyWage}");
                             }
                         }
                         break;
@@ -131,10 +116,9 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
 
                             for (int i = 0; i < employeeCount; i++)
                             {
-                                // Calculate summary data for the table
                                 int totalPay = obj.CalculateMonthlyWage(employees[i]);
 
-                                // Count how many days were 'true' in the array
+                                // Local logic to count days just for display
                                 bool[] attendance = obj.Attendance(employees[i]);
                                 int daysPresent = 0;
                                 foreach (bool day in attendance) { if (day) daysPresent++; }
@@ -145,21 +129,73 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
                         break;
 
                     case 5:
+                        // --- NEW: Check Condition (20 Days OR 100 Hours) ---
+                        if (employeeCount == 0)
+                        {
+                            Console.WriteLine("No employees to check.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("\n--- Condition Check (Target: 20 Days OR 100 Hours) ---");
+
+                            for (int i = 0; i < employeeCount; i++)
+                            {
+                                Employee emp = employees[i];
+                                int totalDays = 0;
+                                int totalHours = 0;
+
+                                // 1. Loop through arrays to count totals manually
+                                // We assume array length is 20 based on your implementation
+                                for (int d = 0; d < 20; d++)
+                                {
+                                    if (emp.attendanceStatusArr[d] == true)
+                                    {
+                                        totalDays++;
+                                        // Sum the hours for that day
+                                        totalHours += emp.workTime[d];
+                                    }
+                                }
+
+                                // 2. Check the Condition
+                                bool conditionMet = (totalDays >= 20) || (totalHours >= 100);
+
+                                // 3. Calculate Current Wage based on hours worked
+                                int currentWage = totalHours * emp.wagePerHr;
+
+                                Console.WriteLine($"\nEmployee: {emp.employeeName} ({emp.employeeID})");
+                                Console.WriteLine($" - Days Worked: {totalDays}/20");
+                                Console.WriteLine($" - Hours Worked: {totalHours}");
+
+                                if (conditionMet)
+                                {
+                                    Console.WriteLine(" -> STATUS: GOAL REACHED (100 Hrs or 20 Days completed)");
+                                    Console.WriteLine($" -> Final Wage Calculation: {currentWage}");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($" -> STATUS: In Progress (Needs {20 - totalDays} more days OR {100 - totalHours} more hours)");
+                                    Console.WriteLine($" -> Current Wage Accumulation: {currentWage}");
+                                }
+                            }
+                        }
+                        break;
+
+                    case 6:
                         Console.WriteLine("Exiting program...");
                         isRunning = false;
                         break;
 
                     default:
-                        Console.WriteLine("Invalid choice. Please select 1-5.");
+                        Console.WriteLine("Invalid choice. Please select 1-6.");
                         break;
                 }
             }
 
             //UC:1   -- taking input from user to add employees and showing if they are present or not.
-
             //UC:2   -- taking input for adding hours to an employee and also calculating and showing daily wages.
-
-            //UC:4   -- taking inputs using switch cases and can add upto 1000 employees and manipulate their data and calculate daily wages.
+            //UC:4   -- taking inputs using switch cases and can add upto 1000 employees and manipulate their data.
+            //UC:5   -- calculate monthly and daily wages.
+            //UC:6   -- calculate wages until an empoloyee has worked for 20 days or 100 hours.
         }
     }
 }
