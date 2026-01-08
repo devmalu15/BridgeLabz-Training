@@ -14,20 +14,21 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
             Employee[] employees = new Employee[1000];
             int employeeCount = 0; // Tracks how many employees exist
 
-            IEmployable obj = new EmployeeImpl();
+            // We use the Implementation class which contains the new logic
+            EmployeeImpl obj = new EmployeeImpl();
             bool isRunning = true;
 
-            Console.WriteLine("Welcome to Employee Wage Computation Program");
+            Console.WriteLine("Welcome to Employee Wage Computation Program (Monthly Logic)");
 
             while (isRunning)
             {
                 // Menu
                 Console.WriteLine("\n--------------------------------");
                 Console.WriteLine("Select an Option:");
-                Console.WriteLine("1. Add New Employee");
-                Console.WriteLine("2. Record Hours & Attendance (Search by ID)");
-                Console.WriteLine("3. Calculate & Show Daily Wages (All Employees)");
-                Console.WriteLine("4. Show All Details of All Employees");
+                Console.WriteLine("1. Add New Employee (Generates 20-day Attendance)");
+                Console.WriteLine("2. Process Work Hours (Randomly assigns hours for present days)");
+                Console.WriteLine("3. Calculate & Show Monthly Wages");
+                Console.WriteLine("4. Show All Details (Summary)");
                 Console.WriteLine("5. Exit");
                 Console.Write("Enter choice: ");
 
@@ -42,6 +43,7 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
                 {
                     case 1:
                         // --- Add Employee ---
+                        // Uses the new AddEmployee method which sets up the 20-day boolean array
                         if (employeeCount < 1000)
                         {
                             employees[employeeCount] = obj.AddEmployee();
@@ -61,7 +63,7 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
                             break;
                         }
 
-                        Console.Write("Enter Employee ID to update: ");
+                        Console.Write("Enter Employee ID to process hours: ");
                         string searchId = Console.ReadLine();
                         bool found = false;
 
@@ -72,16 +74,11 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
                                 found = true;
                                 Console.WriteLine($"Found Employee: {employees[i].employeeName}");
 
-                                if (obj.Attendance(employees[i]))
-                                {
-                                    Console.WriteLine(employees[i].employeeName + " is present!");
-                                    obj.AddHours(employees[i]);
-                                }
-                                else
-                                {
-                                    Console.WriteLine(employees[i].employeeName + " is absent!");
-                                    employees[i].workTime = 0;
-                                }
+                                // NEW LOGIC: We don't ask user for hours anymore.
+                                // We call AddHours which randomly assigns 4-9 hours for every 'Present' day in the array.
+                                obj.AddHours(employees[i]);
+
+                                Console.WriteLine("Success: Random work hours generated for all 'Present' days in the month.");
                                 break;
                             }
                         }
@@ -100,11 +97,22 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
                         }
                         else
                         {
-                            Console.WriteLine("\n--- Daily Wage Report ---");
+                            Console.WriteLine("\n--- Monthly Wage Report ---");
                             for (int i = 0; i < employeeCount; i++)
                             {
-                                Console.WriteLine($"{employees[i].employeeName}({employees[i].employeeID})'s daily wage is {obj.CalculateDailyWage(employees[i])}");
-                                Console.WriteLine(employees[i].ToString());
+                                // 1. Calculate Monthly Total
+                                int monthlyWage = obj.CalculateMonthlyWage(employees[i]);
+
+                                // 2. Calculate Daily Breakdown (demonstrating use of the method)
+                                int[] dailyWages = obj.CalculateDailyWage(employees[i]);
+
+                                Console.WriteLine($"\nID: {employees[i].employeeID} | Name: {employees[i].employeeName}");
+                                Console.WriteLine($"Total Monthly Wage: {monthlyWage}");
+
+                                // Optional: Show first 5 days as a sample
+                                Console.Write("Daily Wage Sample (First 5 days): ");
+                                for (int d = 0; d < 5; d++) Console.Write(dailyWages[d] + " ");
+                                Console.WriteLine("...");
                             }
                         }
                         break;
@@ -117,15 +125,21 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
                         }
                         else
                         {
-                            Console.WriteLine("\n--- All Employee Details ---");
-                            Console.WriteLine($"{"ID",-10} {"Name",-15} {"Type",-12} {"Wage/Hr",-10} {"Hours",-8} {"Status",-10}");
-                            Console.WriteLine("----------------------------------------------------------------------");
+                            Console.WriteLine("\n--- All Employee Monthly Summary ---");
+                            Console.WriteLine($"{"ID",-10} {"Name",-15} {"Type",-12} {"Wage/Hr",-10} {"Days Present",-15} {"Total Pay",-10}");
+                            Console.WriteLine("-----------------------------------------------------------------------------");
 
                             for (int i = 0; i < employeeCount; i++)
                             {
-                                // Using formatted string to align columns cleanly
-                                string status = employees[i].attendanceStatus ? "Present" : "Absent";
-                                Console.WriteLine($"{employees[i].employeeID,-10} {employees[i].employeeName,-15} {employees[i].employment,-12} {employees[i].wagePerHr,-10} {employees[i].workTime,-8} {status,-10}");
+                                // Calculate summary data for the table
+                                int totalPay = obj.CalculateMonthlyWage(employees[i]);
+
+                                // Count how many days were 'true' in the array
+                                bool[] attendance = obj.Attendance(employees[i]);
+                                int daysPresent = 0;
+                                foreach (bool day in attendance) { if (day) daysPresent++; }
+
+                                Console.WriteLine($"{employees[i].employeeID,-10} {employees[i].employeeName,-15} {employees[i].employment,-12} {employees[i].wagePerHr,-10} {daysPresent + "/20",-15} {totalPay,-10}");
                             }
                         }
                         break;

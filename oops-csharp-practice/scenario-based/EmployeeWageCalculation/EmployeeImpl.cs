@@ -9,16 +9,17 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
     public class EmployeeImpl : IEmployable
     {
 
-        public bool Attendance(Employee employee)      // returns true if employee is present and false if absent;
+        public bool[] Attendance(Employee employee)      // returns true if employee is present and false if absent;
         {
-            return employee.attendanceStatus;
+            return employee.attendanceStatusArr;
+
         }
 
-        public Employee AddEmployee()                 // takes employee data from console to create a new employee.
+        public Employee AddEmployee()                  // takes employee data from console to create a new employee.
         {
             Console.WriteLine("\n--- Add New Employee ---");
 
-            
+
             Console.Write("Enter Employee ID: ");
             string id = Console.ReadLine();
 
@@ -26,7 +27,7 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
             string name = Console.ReadLine();
 
             Console.Write("Enter Wage Per Hour: ");
-            
+
             int wage;
             while (!int.TryParse(Console.ReadLine(), out wage))
             {
@@ -35,16 +36,24 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
 
             Random random = new Random();
 
+            bool[] arr = new bool[20];
+
             bool status = true;
 
-            if(random.Next(0, 2) == 1)
+            for (int i = 0; i < 20; i++)
             {
-                status = true;
+                if (random.Next(0, 2) == 1)
+                {
+                    status = true;
+                }
+                else
+                {
+                    status = false;
+                }
+
+                arr[i] = status;
             }
-            else
-            {
-                status = false;
-            }
+
 
             //UC:3 added employee type
             Console.WriteLine("Employment Type:");
@@ -62,7 +71,8 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
 
             string empType = (choice == 1) ? "Permanent" : "Part-time";
 
-            Employee newEmp = new Employee(id, name, 0, wage, status);
+            int[] workHourArr = new int[20];
+            Employee newEmp = new Employee(id, name, workHourArr, wage, arr, empType);
 
             Console.WriteLine("Employee added successfully!");
             return newEmp;
@@ -74,24 +84,52 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
 
         public void AddHours(Employee employee)
         {
-            Console.Write($"Enter work hours for {employee.employeeName} (Max 8): ");
-            if (int.TryParse(Console.ReadLine(), out int hours))
+
+            Random random = new Random();
+            for (int i = 0; i < employee.workTime.Length; i++)
             {
-                if (hours > 8) hours = 8;
-                employee.workTime = employee.workTime + hours;
+                if (employee.attendanceStatusArr[i] == true)
+                {
+                    employee.workTime[i] = employee.workTime[i] + random.Next(4, 9);
+                }
+
             }
+
+
         }
 
 
-        public int CalculateDailyWage(Employee employee)
+        public int[] CalculateDailyWage(Employee employee)
         {
-            return employee.workTime * employee.wagePerHr;
+            int[] dailyWages = new int[20];
+            for (int i = 0; i < employee.attendanceStatusArr.Length; i++)
+            {
+                if (employee.attendanceStatusArr[i] == true)
+                {
+                    dailyWages[i] = dailyWages[i] + (employee.workTime[i] * employee.wagePerHr);
+                }
+            }
+            return dailyWages;
         }
 
         //UC:2 --- AddHours and CalculateDailyWage methods added.
 
 
+        public int CalculateMonthlyWage(Employee employee)
+        {
+            int sum = 0;
+            for (int i = 0; i < employee.attendanceStatusArr.Length; i++)
+            {
+                if (employee.attendanceStatusArr[i] == true)
+                {
+                    sum = sum + (employee.workTime[i] * employee.wagePerHr);
+                }
+            }
 
+            return sum;
+        }
+
+        //UC:3 --- Calculate Monthly Wages method to calculate wages upto a month
 
     }
 }
