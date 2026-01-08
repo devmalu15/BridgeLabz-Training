@@ -16,7 +16,9 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
 
         public bool attendanceStatus { get; set; }
 
-        public Employee(String employeeID, String employeeName, int workTime, int wagePerHr, bool attendanceStatus)
+        public String employment { get; set; }
+
+        public Employee(String employeeID, String employeeName, int workTime, int wagePerHr, bool attendanceStatus, String employment)
         { 
 
             this.employeeName = employeeName;
@@ -26,11 +28,13 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
             this.employeeID = employeeID;
 
             this.attendanceStatus = attendanceStatus;
+
+            this.employment = employment;
         }
 
         public override string? ToString()
         {
-            return this.employeeID + " " + this.employeeName + " " + this.attendanceStatus;
+            return this.employeeID + " " + this.employeeName + " " + this.attendanceStatus + " " + this.employment;
         }
     }
 }

@@ -32,6 +32,8 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
             for (int i = 0; i < 2; i++)
             {
                 Console.WriteLine($"{employees[i].employeeName}({employees[i].employeeID})'s daily wage is {obj.CalculateDailyWage(employees[i])}");
+
+                Console.WriteLine(employees[i].ToString());
             }
 
 

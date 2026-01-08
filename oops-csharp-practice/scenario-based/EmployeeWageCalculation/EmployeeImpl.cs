@@ -46,7 +46,23 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
                 status = false;
             }
 
-                Employee newEmp = new Employee(id, name, 0, wage, status);
+            //UC:3 added employee type
+            Console.WriteLine("Employment Type:");
+            Console.WriteLine("1. Permanent");
+            Console.WriteLine("2. Part-time");
+            Console.Write("Select (1 or 2): ");
+
+            int choice;
+
+            while (!int.TryParse(Console.ReadLine(), out choice) || (choice != 1 && choice != 2))
+            {
+                Console.Write("Invalid choice. Please enter 1 for Permanent or 2 for Part-time: ");
+            }
+
+
+            string empType = (choice == 1) ? "Permanent" : "Part-time";
+
+            Employee newEmp = new Employee(id, name, 0, wage, status);
 
             Console.WriteLine("Employee added successfully!");
             return newEmp;
