@@ -14,5 +14,11 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
 
 
         //UC:1 -- can add employees and check if they are present or absent.
+
+        public void AddHours(Employee employee);
+
+        public int CalculateDailyWage(Employee employee);
+
+        //UC:2 -- can add workHours to any employee and calculate their daily wage
     }
 }

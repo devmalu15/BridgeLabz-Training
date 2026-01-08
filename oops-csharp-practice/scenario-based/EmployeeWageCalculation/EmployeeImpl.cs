@@ -56,6 +56,25 @@ namespace EmployeeWageComputation.EmployeeWageCalculation
         //UC:1 --- AddEmployee and Attendance methods added.
 
 
+        public void AddHours(Employee employee)
+        {
+            Console.Write($"Enter work hours for {employee.employeeName} (Max 8): ");
+            if (int.TryParse(Console.ReadLine(), out int hours))
+            {
+                if (hours > 8) hours = 8;
+                employee.workTime = employee.workTime + hours;
+            }
+        }
+
+
+        public int CalculateDailyWage(Employee employee)
+        {
+            return employee.workTime * employee.wagePerHr;
+        }
+
+        //UC:2 --- AddHours and CalculateDailyWage methods added.
+
+
 
 
     }
