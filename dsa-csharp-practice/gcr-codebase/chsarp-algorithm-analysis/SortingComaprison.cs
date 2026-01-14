@@ -13,8 +13,8 @@ namespace BridgeLabsTrainingVS.AlgorithmAnalysis
         {
             int size = 10000;
             int[] original = new int[size];
-            Random rand = new Random();
-            for (int i = 0; i < size; i++) original[i] = rand.Next(10000);
+            Random random = new Random();
+            for (int i = 0; i < size; i++) original[i] = random.Next(10000);
 
             int[] bubbleData = (int[])original.Clone();
             Stopwatch sw = Stopwatch.StartNew();
