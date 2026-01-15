@@ -13,14 +13,40 @@ This repository serves as a daily log of my technical training and professional 
 ## 🛠️ Technology Stack
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 ---
 
 ## 📅 Daily Progress Log
 
-### 🔻 Current Week (Week 2)
+### 🔻 Current Week (Week 5)
+| Date | Topic | Key Learnings & Practical Work | Status |
+| :--- | :--- | :--- | :--- |
+| **Jan 12** | **Scenario Based and Searching Algorithms** | Practice Problems on Searching Algorithms and Solved three scenario based problems i.e., Metal Factory, Custom Furniture Manufacturing and LoanBuddy. | ✅ Completed |
+| **Jan 13** | **Scenario Based and Algorithm Analysis** | Practice Problems on Algorithms Analysis and two Scenario Based Problems i.e., CinemaTime and BookBuddy. | ✅ Completed |
+| **Jan 14** | **----------------------** | ------------------------------- | -------- |
+| **Jan 15** | **-------------------------** | ------------------------------- | ------- |
+| **Jan 16** | **---------------------------** | ----------------------------| -------- |
+| **Jan 17** | **--------------------------** | ----------------------------- | ------ |
+
+
+
+
+
+<details>
+<summary><strong>📂 Archive: Previous Weeks (Click to Expand)</strong></summary>
+
+### Week 4:
+| Date | Topic | Key Learnings & Practical Work | Status |
+| :--- | :--- | :--- | :--- |
+| **Jan 05** | **Scenario Based and Encapsulation** | Solved two scenario based problems i.e., Vehicle Rental and Hospital Management Assignment of Encapsulation. | ✅ Completed |
+| **Jan 06** | **Scenario Based** | Solved two scenario based problems i.e., Bird Santaury and Customer Service Call Log Manager | ✅ Completed |
+| **Jan 07** | **Scenario Based and LinkedList** | practice problems on linked list and scenario based problems i.e., EmployeeWage | ✅ Completed |
+| **Jan 08** | **Scenario Based and Stack, Queue and HashMap(Dictionary)** | Practice problems on Stack, Queue and HashMap(Dictionary) and Scenario Based i.e., Smart Home Automation. | ✅ Completed |
+| **Jan 09** | **Scenario Based and Sorting Algorithms** | Practice Problems on Sorting Algorithms and Solved two Scenario Based problems i.e., FitTrack and ATM Dispenser. | ✅ Completed |
+
+
+### Week 3:
 | Date | Topic | Key Learnings & Practical Work | Status |
 | :--- | :--- | :--- | :--- |
 | **Dec 29** | **Scenario Based** | Solved two scenario based problems i.e., temperature analyzer and test score manager. | ✅ Completed |
@@ -29,10 +55,6 @@ This repository serves as a daily log of my technical training and professional 
 | **Jan 01** | **Object Modelling and Scenario Based** | Practice problems on Object modelling, classes and access modifiers and Cafetaria Menu App. | ✅ Completed |
 | **Jan 02** | **Review and Inheritence** | Practice problems on Inheritence and Scenario Based in review i.e., Amazon Pay Payment gateway. | ✅ Completed |
 | **Jan 03** | **Scenario Based** | Two scenario based problems, i.e., Bus Route Distance Tracker and Festive Lucky Draw. | ✅ Completed |
-
-
-<details>
-<summary><strong>📂 Archive: Previous Weeks (Click to Expand)</strong></summary>
 
 ### Week 2: 
 | Date | Topic | Key Learnings & Practical Work | Status |
@@ -73,5 +95,5 @@ This repository serves as a daily log of my technical training and professional 
 ---
 
 <div align="center">
-  <sub>Log maintained by Dev Malu • Last Updated: 22nd December 2025</sub>
+  <sub>Log maintained by Dev Malu • Last Updated: 15th January 2025</sub>
 </div>
