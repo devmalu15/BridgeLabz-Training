@@ -85,21 +85,21 @@ This repository serves as a daily log of my technical training and professional 
 ### 🔹 Projects (Scenario Based)
 | Project Name | Description | Tech Stack | Repository Link |
 | :--- | :--- | :--- | :--- |
-| **Algorithm Optimization Suite** | Implemented logic for **Metal Factory, Custom Furniture, LoanBuddy, CinemaTime, and BookBuddy** focusing on search efficiency. | C#, Searching Algos, Analysis | [Link](#) |
-| **Fitness & Finance Mgr** | Created **FitTrack** and **ATM Dispenser** systems to handle logical data flow and user transactions. | C#, Sorting, Logic | [Link](#) |
-| **Smart System Simulations** | Developed **Smart Home Automation**, **Bird Sanctuary**, and **Customer Service Log** to model real-world entities. | C#, Stack, Queue, Dictionary | [Link](#) |
-| **Employee Mgmt System** | Built **EmployeeWage**, **Vehicle Rental**, and **Hospital Management** systems focusing on data encapsulation. | C#, OOP, Encapsulation, LinkedList | [Link](#) |
-| **E-Commerce & Utils** | Developed **Amazon Pay Gateway**, **Invoice Generator**, **Maths Utility**, and **Cafeteria Menu App**. | C#, Inheritance, Static/Sealed | [Link](#) |
-| **Banking & Edu Systems** | Implemented **Banking System**, **Library Management**, and **EduQuiz** utilizing constructors and object modeling. | C#, OOP, Constructors | [Link](#) |
-| **Logic Trackers** | Created **Temperature Analyzer**, **Test Score Manager**, and **Bus Route Tracker**. | C#, Logic Building | [Link](#) |
-| **Console Games** | Developed interactive **Snake & Ladder** and **Festive Lucky Draw** games. | C#, Random, Control Flow | [Link](#) |
+| **Algorithm Optimization Suite** | Implemented logic for **Metal Factory, Custom Furniture, LoanBuddy, CinemaTime, and BookBuddy** focusing on search efficiency. | C#| [Link](#) |
+| **Fitness & Finance Mgr** | Created **FitTrack** and **ATM Dispenser** systems to handle logical data flow and user transactions. | C# | [Link](#) |
+| **Smart System Simulations** | Developed **Smart Home Automation**, **Bird Sanctuary**, and **Customer Service Log** to model real-world entities. | C# | [Link](#) |
+| **Employee Mgmt System** | Built **EmployeeWage**, **Vehicle Rental**, and **Hospital Management** systems focusing on data encapsulation. | C# | [Link](#) |
+| **E-Commerce & Utils** | Developed **Amazon Pay Gateway**, **Invoice Generator**, **Maths Utility**, and **Cafeteria Menu App**. | C# | [Link](#) |
+| **Banking & Edu Systems** | Implemented **Banking System**, **Library Management**, and **EduQuiz** utilizing constructors and object modeling. | C# | [Link](#) |
+| **Logic Trackers** | Created **Temperature Analyzer**, **Test Score Manager**, and **Bus Route Tracker**. | C# | [Link](#) |
+| **Console Games** | Developed interactive **Snake & Ladder** and **Festive Lucky Draw** games. | C# | [Link](#) |
 
 ### 🔸 Assignments (Practice Problems)
 | Assignment Topic | Description | Tech Stack | Repository Link |
 | :--- | :--- | :--- | :--- |
 | **Searching & Analysis** | Practice problems on Linear/Binary search and Big O analysis. | C# | [Link](#) |
-| **Data Structures** | Implementation and problems on **Stack, Queue, LinkedList, and HashMap**. | C#, Collections | [Link](#) |
-| **OOP Concepts** | Assignments covering **Encapsulation, Inheritance, Constructors, Access Modifiers**. | C#, OOP | [Link](#) |
+| **Data Structures** | Implementation and problems on **Stack, Queue, LinkedList, and HashMap**. | C# | [Link](#) |
+| **OOP Concepts** | Assignments covering **Encapsulation, Inheritance, Constructors, Access Modifiers**. | C# | [Link](#) |
 | **C# Keywords** | Drills on `this`, `sealed`, `static` keywords and Type Casting. | C# | [Link](#) |
 | **Core Logic** | 100+ problems covering **Arrays, Strings, Methods, Loops, and If-Else**. | C# | [Link](#) |
 
