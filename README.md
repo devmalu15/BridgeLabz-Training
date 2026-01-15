@@ -82,18 +82,38 @@ This repository serves as a daily log of my technical training and professional 
 
 ## 🧩 Projects & Assignments
 
+### 🔹 Projects (Scenario Based)
 | Project Name | Description | Tech Stack | Repository Link |
+| :--- | :--- | :--- | :--- |
+| **Algorithm Optimization Suite** | Implemented logic for **Metal Factory, Custom Furniture, LoanBuddy, CinemaTime, and BookBuddy** focusing on search efficiency. | C#, Searching Algos, Analysis | [Link](#) |
+| **Fitness & Finance Mgr** | Created **FitTrack** and **ATM Dispenser** systems to handle logical data flow and user transactions. | C#, Sorting, Logic | [Link](#) |
+| **Smart System Simulations** | Developed **Smart Home Automation**, **Bird Sanctuary**, and **Customer Service Log** to model real-world entities. | C#, Stack, Queue, Dictionary | [Link](#) |
+| **Employee Mgmt System** | Built **EmployeeWage**, **Vehicle Rental**, and **Hospital Management** systems focusing on data encapsulation. | C#, OOP, Encapsulation, LinkedList | [Link](#) |
+| **E-Commerce & Utils** | Developed **Amazon Pay Gateway**, **Invoice Generator**, **Maths Utility**, and **Cafeteria Menu App**. | C#, Inheritance, Static/Sealed | [Link](#) |
+| **Banking & Edu Systems** | Implemented **Banking System**, **Library Management**, and **EduQuiz** utilizing constructors and object modeling. | C#, OOP, Constructors | [Link](#) |
+| **Logic Trackers** | Created **Temperature Analyzer**, **Test Score Manager**, and **Bus Route Tracker**. | C#, Logic Building | [Link](#) |
+| **Console Games** | Developed interactive **Snake & Ladder** and **Festive Lucky Draw** games. | C#, Random, Control Flow | [Link](#) |
 
+### 🔸 Assignments (Practice Problems)
+| Assignment Topic | Description | Tech Stack | Repository Link |
+| :--- | :--- | :--- | :--- |
+| **Searching & Analysis** | Practice problems on Linear/Binary search and Big O analysis. | C# | [Link](#) |
+| **Data Structures** | Implementation and problems on **Stack, Queue, LinkedList, and HashMap**. | C#, Collections | [Link](#) |
+| **OOP Concepts** | Assignments covering **Encapsulation, Inheritance, Constructors, Access Modifiers**. | C#, OOP | [Link](#) |
+| **C# Keywords** | Drills on `this`, `sealed`, `static` keywords and Type Casting. | C# | [Link](#) |
+| **Core Logic** | 100+ problems covering **Arrays, Strings, Methods, Loops, and If-Else**. | C# | [Link](#) |
 
 ---
 
 ## 💡 Key Takeaways & Notes
-* **Compiler:** Unlike Java's `javac`, modern .NET relies heavily on the `dotnet` CLI toolchain rather than raw `csc` commands.
-* **Execution:** `dotnet run` builds and executes in one step. `dotnet script` is great for Python-like testing.
-* **Git:** Always use a `.gitignore` to keep `bin/` and `obj/` folders out of the repo.
+* **OOP & Modeling:** Moving beyond syntax to "Scenario Based" problems highlighted the importance of modeling real-world entities using **Encapsulation** (protecting data) and **Inheritance** (code reuse).
+* **Data Structures Matter:** Choosing the right collection is critical for performance—e.g., using `Dictionary` for O(1) lookups in the *Smart Home Automation* project versus iterating through a `List`.
+* **Algorithmic Efficiency:** Understanding **Big O Notation** is vital. Implementing Binary Search requires data to be sorted first, making it faster than Linear Search for large datasets.
+* **C# Keywords:** Learned that `static` members belong to the type itself (shared across instances), while `sealed` is essential for preventing unauthorized inheritance in security-critical classes.
+* **Dev Tools:** Modern .NET relies on the `dotnet` CLI. `dotnet run` handles build+execute, while `.gitignore` is mandatory to keep `bin/` and `obj/` clutter out of the repo.
 
 ---
 
 <div align="center">
-  <sub>Log maintained by Dev Malu • Last Updated: 15th January 2025</sub>
+  <sub>Log maintained by Dev Malu • Last Updated: 15th January 2026</sub>
 </div>
