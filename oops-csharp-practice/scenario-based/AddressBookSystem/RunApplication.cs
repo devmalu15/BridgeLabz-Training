@@ -14,7 +14,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             Utility.SetupConsole();
 
             AddressBook myBook = new AddressBook();
-            IAddressable addressable = new AddressableImpl();
+            IContactable addressable = new ContactableImpl();
 
             bool isRunning = true;
 
@@ -34,6 +34,40 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
                         break;
 
                     case "2":
+                        string searchName = Utility.GetSearchName();
+                        Contact foundContact = addressable.ShowContact(myBook, searchName);
+
+                        if (foundContact != null)
+                        {
+                            Contact updatedVars = Utility.GetUpdatedContactDetails(foundContact);
+
+                            addressable.EditContact(
+                                myBook,
+                                foundContact,
+                                updatedVars.firstName,
+                                updatedVars.lastName,
+                                updatedVars.address,
+                                updatedVars.city,
+                                updatedVars.state,
+                                updatedVars.zip,
+                                updatedVars.phoneNumber,
+                                updatedVars.eMail
+                            );
+
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("\n    [!] Contact updated successfully.");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\n    [!] Contact not found.");
+                            Console.ResetColor();
+                        }
+                        Utility.WaitForKey();
+                        break;
+
+                    case "3":
                         isRunning = false;
                         break;
 
@@ -43,7 +77,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
                         break;
                 }
             }
-        
+
         }
     }
 }
