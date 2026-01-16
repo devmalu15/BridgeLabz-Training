@@ -12,5 +12,8 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
         AddressBook findBook(AddressBook[] books, String bookName);
         Contact[] findByCity(AddressBook[] books, String searchCity);
         Contact[] findByState(AddressBook[] books, String searchState);
+
+        Contact findByCityAndName(AddressBook[] books, String searchCity, String searchName);
+        Contact findByStateAndName(AddressBook[] books, String searchState, String searchName);
     }
 }

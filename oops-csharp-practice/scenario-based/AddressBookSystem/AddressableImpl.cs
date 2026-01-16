@@ -75,5 +75,47 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 
             return result;
         }
+
+        public Contact findByCityAndName(AddressBook[] books, String searchCity, String searchName)
+        {
+            for (int i = 0; i < books.Length; i++)
+            {
+                if (books[i] != null)
+                {
+                    for (int j = 0; j < maxLen; j++)
+                    {
+                        if (books[i].contacts[j] != null)
+                        {
+                            if (books[i].contacts[j].city == searchCity && books[i].contacts[j].firstName + " " + books[i].contacts[j].lastName == searchName)
+                            {
+                                return books[i].contacts[j];
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        public Contact findByStateAndName(AddressBook[] books, String searchState, String searchName)
+        {
+            for (int i = 0; i < books.Length; i++)
+            {
+                if (books[i] != null)
+                {
+                    for (int j = 0; j < maxLen; j++)
+                    {
+                        if (books[i].contacts[j] != null)
+                        {
+                            if (books[i].contacts[j].state == searchState && books[i].contacts[j].firstName + " " + books[i].contacts[j].lastName == searchName)
+                            {
+                                return books[i].contacts[j];
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }
     }
 }

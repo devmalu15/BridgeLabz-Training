@@ -58,21 +58,39 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
                         Utility.WaitForKey();
                         break;
 
-                    case "4": // SEARCH BY CITY
+                    case "4": // SEARCH ALL BY CITY (List)
                         string cityQuery = Utility.GetInput("Enter City to Search");
                         Contact[] cityResults = bookManager.findByCity(bookShelf, cityQuery);
                         Utility.PrintSearchResults(cityResults);
                         Utility.WaitForKey();
                         break;
 
-                    case "5": // SEARCH BY STATE
+                    case "5": // SEARCH ALL BY STATE (List)
                         string stateQuery = Utility.GetInput("Enter State to Search");
                         Contact[] stateResults = bookManager.findByState(bookShelf, stateQuery);
                         Utility.PrintSearchResults(stateResults);
                         Utility.WaitForKey();
                         break;
 
-                    case "6": // EXIT
+                    case "6": // FIND PERSON BY CITY (Single)
+                        string citySearch = Utility.GetInput("Enter City");
+                        string nameSearchCity = Utility.GetInput("Enter Person Name");
+
+                        Contact resultByCity = bookManager.findByCityAndName(bookShelf, citySearch, nameSearchCity);
+                        Utility.PrintSingleResult(resultByCity);
+                        Utility.WaitForKey();
+                        break;
+
+                    case "7": // FIND PERSON BY STATE (Single)
+                        string stateSearch = Utility.GetInput("Enter State");
+                        string nameSearchState = Utility.GetInput("Enter Person Name");
+
+                        Contact resultByState = bookManager.findByStateAndName(bookShelf, stateSearch, nameSearchState);
+                        Utility.PrintSingleResult(resultByState);
+                        Utility.WaitForKey();
+                        break;
+
+                    case "8": // EXIT
                         appRunning = false;
                         break;
 

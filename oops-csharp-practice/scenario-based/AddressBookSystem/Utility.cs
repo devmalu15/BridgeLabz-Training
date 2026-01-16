@@ -5,7 +5,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 {
     public class Utility
     {
-        private static string Version = "1.8"; // Update for Search Features
+        private static string Version = "1.9"; // Updated for Person Search
         private static ConsoleColor ColorPrimary = ConsoleColor.Cyan;
         private static ConsoleColor ColorSecondary = ConsoleColor.Magenta;
         private static ConsoleColor ColorText = ConsoleColor.White;
@@ -41,10 +41,12 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             Console.WriteLine("    [2] OPEN Existing Address Book");
             Console.WriteLine("    [3] DELETE Address Book");
             Console.WriteLine("    --------------------------------");
-            Console.WriteLine("    [4] SEARCH by City (All Books)");
-            Console.WriteLine("    [5] SEARCH by State (All Books)");
+            Console.WriteLine("    [4] VIEW ALL by City");
+            Console.WriteLine("    [5] VIEW ALL by State");
+            Console.WriteLine("    [6] FIND Person by City");   // New Feature
+            Console.WriteLine("    [7] FIND Person by State");  // New Feature
             Console.WriteLine("    --------------------------------");
-            Console.WriteLine("    [6] EXIT Application");
+            Console.WriteLine("    [8] EXIT Application");
             Console.WriteLine();
             Console.ForegroundColor = ColorPrimary;
             Console.Write("    >> Select Option: ");
@@ -120,7 +122,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             return new Contact(fName, lName, addr, city, state, zip, phone, email);
         }
 
-        // --- NEW HELPER: Displays Search Results ---
+        // --- Helper: Displays Search Results for Arrays ---
         public static void PrintSearchResults(Contact[] results)
         {
             PrintLogo();
@@ -146,6 +148,28 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("    [!] No contacts found matching that criteria.");
+                Console.ResetColor();
+            }
+        }
+
+        // --- NEW Helper: Displays Single Contact Result ---
+        public static void PrintSingleResult(Contact c)
+        {
+            PrintLogo();
+            Console.WriteLine("    --- SEARCH RESULT ---");
+            Console.WriteLine();
+
+            if (c != null)
+            {
+                Console.WriteLine($"    Name:    {c.firstName} {c.lastName}");
+                Console.WriteLine($"    Phone:   {c.phoneNumber}");
+                Console.WriteLine($"    Email:   {c.eMail}");
+                Console.WriteLine($"    Address: {c.address}, {c.city}, {c.state} - {c.zip}");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("    [!] Person not found.");
                 Console.ResetColor();
             }
         }
