@@ -14,5 +14,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
         Contact ShowContact(AddressBook addressbook, String searchName);
         void DeleteContact(AddressBook addressBook, Contact contact);
 
+        void SortContacts(AddressBook addressBook);
+
     }
 }

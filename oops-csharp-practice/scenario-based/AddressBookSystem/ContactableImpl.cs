@@ -97,5 +97,38 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
        
             }
         }
+
+        public void SortContacts(AddressBook addressBook)
+        {
+            for (int i = 0; i < maxLen - 1; i++)
+            {
+                bool swapped = false;
+                for (int j = 0; j < maxLen - i - 1; j++)
+                {
+                    Contact c1 = addressBook.contacts[j];
+                    Contact c2 = addressBook.contacts[j + 1];
+
+                    if (c1 == null && c2 != null)
+                    {
+                        addressBook.contacts[j] = c2;
+                        addressBook.contacts[j + 1] = null;
+                        swapped = true;
+                    }
+                    else if (c1 != null && c2 != null)
+                    {
+                        string name1 = c1.firstName + " " + c1.lastName;
+                        string name2 = c2.firstName + " " + c2.lastName;
+
+                        if (string.Compare(name1, name2, StringComparison.OrdinalIgnoreCase) > 0)
+                        {
+                            addressBook.contacts[j] = c2;
+                            addressBook.contacts[j + 1] = c1;
+                            swapped = true;
+                        }
+                    }
+                }
+                if (!swapped) break;
+            }
+        }
     }
 }

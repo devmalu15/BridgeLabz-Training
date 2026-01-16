@@ -5,7 +5,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 {
     public class Utility
     {
-        private static string Version = "1.9"; // Updated for Person Search
+        private static string Version = "1.11"; // Updated for Sorting Feature
         private static ConsoleColor ColorPrimary = ConsoleColor.Cyan;
         private static ConsoleColor ColorSecondary = ConsoleColor.Magenta;
         private static ConsoleColor ColorText = ConsoleColor.White;
@@ -43,10 +43,12 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             Console.WriteLine("    --------------------------------");
             Console.WriteLine("    [4] VIEW ALL by City");
             Console.WriteLine("    [5] VIEW ALL by State");
-            Console.WriteLine("    [6] FIND Person by City");   // New Feature
-            Console.WriteLine("    [7] FIND Person by State");  // New Feature
+            Console.WriteLine("    [6] FIND Person by City");
+            Console.WriteLine("    [7] FIND Person by State");
+            Console.WriteLine("    [8] COUNT by City");
+            Console.WriteLine("    [9] COUNT by State");
             Console.WriteLine("    --------------------------------");
-            Console.WriteLine("    [8] EXIT Application");
+            Console.WriteLine("    [10] EXIT Application");
             Console.WriteLine();
             Console.ForegroundColor = ColorPrimary;
             Console.Write("    >> Select Option: ");
@@ -63,7 +65,8 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             Console.WriteLine("    [1] ADD New Contact");
             Console.WriteLine("    [2] EDIT Existing Contact");
             Console.WriteLine("    [3] DELETE Contact");
-            Console.WriteLine("    [4] BACK to Main Menu");
+            Console.WriteLine("    [4] SORT Contacts by Name"); // New Option
+            Console.WriteLine("    [5] BACK to Main Menu");
             Console.WriteLine();
             Console.ForegroundColor = ColorPrimary;
             Console.Write("    >> Select Option: ");
@@ -122,7 +125,20 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             return new Contact(fName, lName, addr, city, state, zip, phone, email);
         }
 
-        // --- Helper: Displays Search Results for Arrays ---
+        public static void PrintCountResult(string label, string name, int count)
+        {
+            PrintLogo();
+            Console.WriteLine("    --- COUNT RESULTS ---");
+            Console.WriteLine();
+            Console.ForegroundColor = ColorText;
+            Console.WriteLine($"    Region Type:  {label}");
+            Console.WriteLine($"    Region Name:  {name}");
+            Console.WriteLine("    ---------------------------");
+            Console.ForegroundColor = ColorPrimary;
+            Console.WriteLine($"    TOTAL COUNT:  {count}");
+            Console.ResetColor();
+        }
+
         public static void PrintSearchResults(Contact[] results)
         {
             PrintLogo();
@@ -152,7 +168,6 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             }
         }
 
-        // --- NEW Helper: Displays Single Contact Result ---
         public static void PrintSingleResult(Contact c)
         {
             PrintLogo();

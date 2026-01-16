@@ -9,11 +9,14 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 {
     public interface IAddressable
     {
-        AddressBook findBook(AddressBook[] books, String bookName);
-        Contact[] findByCity(AddressBook[] books, String searchCity);
-        Contact[] findByState(AddressBook[] books, String searchState);
+        AddressBook FindBook(AddressBook[] books, String bookName);
+        Contact[] FindByCity(AddressBook[] books, String searchCity);
+        Contact[] FindByState(AddressBook[] books, String searchState);
 
-        Contact findByCityAndName(AddressBook[] books, String searchCity, String searchName);
-        Contact findByStateAndName(AddressBook[] books, String searchState, String searchName);
+        Contact FindByCityAndName(AddressBook[] books, String searchCity, String searchName);
+        Contact FindByStateAndName(AddressBook[] books, String searchState, String searchName);
+
+        int CountByCity(AddressBook[] books, String searchCity);
+        int CountByState(AddressBook[] books, String searchState);
     }
 }

@@ -10,7 +10,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
     public class AddressableImpl : IAddressable
     {
         int maxLen = 1000;
-        public AddressBook findBook(AddressBook[] books, String bookName)
+        public AddressBook FindBook(AddressBook[] books, String bookName)
         {
             for(int i = 0; i < books.Length; i++)
             {
@@ -26,7 +26,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             return null;
         }
 
-        public Contact[] findByCity(AddressBook[] books, String searchCity)
+        public Contact[] FindByCity(AddressBook[] books, String searchCity)
         {
             Contact[] result = new Contact[1000];
             int count = 0;
@@ -51,7 +51,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             return result;
         }
 
-        public Contact[] findByState(AddressBook[] books, String searchState)
+        public Contact[] FindByState(AddressBook[] books, String searchState)
         {
             Contact[] result = new Contact[1000];
             int count = 0;
@@ -76,7 +76,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             return result;
         }
 
-        public Contact findByCityAndName(AddressBook[] books, String searchCity, String searchName)
+        public Contact FindByCityAndName(AddressBook[] books, String searchCity, String searchName)
         {
             for (int i = 0; i < books.Length; i++)
             {
@@ -97,7 +97,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             return null;
         }
 
-        public Contact findByStateAndName(AddressBook[] books, String searchState, String searchName)
+        public Contact FindByStateAndName(AddressBook[] books, String searchState, String searchName)
         {
             for (int i = 0; i < books.Length; i++)
             {
@@ -117,5 +117,54 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             }
             return null;
         }
+
+        public int CountByCity(AddressBook[] books, String searchCity)
+        {
+         
+            int count = 0;
+            for (int i = 0; i < books.Length; i++)
+            {
+                if (books[i] != null)
+                {
+                    for (int j = 0; j < maxLen; j++)
+                    {
+                        if (books[i].contacts[j] != null)
+                        {
+                            if (books[i].contacts[j].city == searchCity)
+                            {                                
+                                count++;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return count;
+        }
+
+        public int CountByState(AddressBook[] books, String searchState)
+        {
+
+            int count = 0;
+            for (int i = 0; i < books.Length; i++)
+            {
+                if (books[i] != null)
+                {
+                    for (int j = 0; j < maxLen; j++)
+                    {
+                        if (books[i].contacts[j] != null)
+                        {
+                            if (books[i].contacts[j].state == searchState)
+                            {
+                                count++;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return count;
+        }
+
     }
 }

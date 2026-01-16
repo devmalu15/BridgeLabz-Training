@@ -25,7 +25,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
                 {
                     case "1": // CREATE NEW BOOK
                         string newName = Utility.GetInput("Enter New Book Name");
-                        if (bookManager.findBook(bookShelf, newName) != null)
+                        if (bookManager.FindBook(bookShelf, newName) != null)
                         {
                             Console.WriteLine("    [!] A book with this name already exists.");
                         }
@@ -38,11 +38,10 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 
                     case "2": // OPEN BOOK
                         string openName = Utility.GetInput("Enter Book Name to Open");
-                        AddressBook selectedBook = bookManager.findBook(bookShelf, openName);
+                        AddressBook selectedBook = bookManager.FindBook(bookShelf, openName);
 
                         if (selectedBook != null)
                         {
-                            // Enter the Level 2 Loop
                             ManageBookContacts(selectedBook);
                         }
                         else
@@ -60,14 +59,14 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 
                     case "4": // SEARCH ALL BY CITY (List)
                         string cityQuery = Utility.GetInput("Enter City to Search");
-                        Contact[] cityResults = bookManager.findByCity(bookShelf, cityQuery);
+                        Contact[] cityResults = bookManager.FindByCity(bookShelf, cityQuery);
                         Utility.PrintSearchResults(cityResults);
                         Utility.WaitForKey();
                         break;
 
                     case "5": // SEARCH ALL BY STATE (List)
                         string stateQuery = Utility.GetInput("Enter State to Search");
-                        Contact[] stateResults = bookManager.findByState(bookShelf, stateQuery);
+                        Contact[] stateResults = bookManager.FindByState(bookShelf, stateQuery);
                         Utility.PrintSearchResults(stateResults);
                         Utility.WaitForKey();
                         break;
@@ -76,7 +75,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
                         string citySearch = Utility.GetInput("Enter City");
                         string nameSearchCity = Utility.GetInput("Enter Person Name");
 
-                        Contact resultByCity = bookManager.findByCityAndName(bookShelf, citySearch, nameSearchCity);
+                        Contact resultByCity = bookManager.FindByCityAndName(bookShelf, citySearch, nameSearchCity);
                         Utility.PrintSingleResult(resultByCity);
                         Utility.WaitForKey();
                         break;
@@ -85,12 +84,26 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
                         string stateSearch = Utility.GetInput("Enter State");
                         string nameSearchState = Utility.GetInput("Enter Person Name");
 
-                        Contact resultByState = bookManager.findByStateAndName(bookShelf, stateSearch, nameSearchState);
+                        Contact resultByState = bookManager.FindByStateAndName(bookShelf, stateSearch, nameSearchState);
                         Utility.PrintSingleResult(resultByState);
                         Utility.WaitForKey();
                         break;
 
-                    case "8": // EXIT
+                    case "8": // COUNT BY CITY
+                        string cityCountTarget = Utility.GetInput("Enter City to Count");
+                        int cityCount = bookManager.CountByCity(bookShelf, cityCountTarget);
+                        Utility.PrintCountResult("City", cityCountTarget, cityCount);
+                        Utility.WaitForKey();
+                        break;
+
+                    case "9": // COUNT BY STATE
+                        string stateCountTarget = Utility.GetInput("Enter State to Count");
+                        int stateCount = bookManager.CountByState(bookShelf, stateCountTarget);
+                        Utility.PrintCountResult("State", stateCountTarget, stateCount);
+                        Utility.WaitForKey();
+                        break;
+
+                    case "10": // EXIT
                         appRunning = false;
                         break;
 
@@ -146,14 +159,24 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
                         Utility.WaitForKey();
                         break;
 
-                    case "4": // BACK
+                    case "4": // SORT Contacts (New Feature)
+                        contactManager.SortContacts(currentBook);
+                        Console.WriteLine("    [!] Contacts Sorted Successfully.");
+                        Console.WriteLine("    --- SORTED LIST ---");
+                        foreach (var c in currentBook.contacts)
+                        {
+                            if (c != null) Console.WriteLine($"    - {c.firstName} {c.lastName}");
+                        }
+                        Utility.WaitForKey();
+                        break;
+
+                    case "5": // BACK
                         inBook = false;
                         break;
                 }
             }
         }
 
-        // --- HELPER: Add Book to Array ---
         private static void AddNewBookToShelf(string name)
         {
             for (int i = 0; i < bookShelf.Length; i++)
@@ -168,7 +191,6 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             Console.WriteLine("    [!] No space left for new books.");
         }
 
-        // --- HELPER: Delete Book from Array ---
         private static void DeleteBookFromShelf(string name)
         {
             for (int i = 0; i < bookShelf.Length; i++)
