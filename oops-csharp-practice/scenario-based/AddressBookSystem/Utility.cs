@@ -5,7 +5,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 {
     public class Utility
     {
-        private static string Version = "1.7"; // Major update for Multi-Book support
+        private static string Version = "1.8"; // Update for Search Features
         private static ConsoleColor ColorPrimary = ConsoleColor.Cyan;
         private static ConsoleColor ColorSecondary = ConsoleColor.Magenta;
         private static ConsoleColor ColorText = ConsoleColor.White;
@@ -40,7 +40,11 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             Console.WriteLine("    [1] CREATE New Address Book");
             Console.WriteLine("    [2] OPEN Existing Address Book");
             Console.WriteLine("    [3] DELETE Address Book");
-            Console.WriteLine("    [4] EXIT Application");
+            Console.WriteLine("    --------------------------------");
+            Console.WriteLine("    [4] SEARCH by City (All Books)");
+            Console.WriteLine("    [5] SEARCH by State (All Books)");
+            Console.WriteLine("    --------------------------------");
+            Console.WriteLine("    [6] EXIT Application");
             Console.WriteLine();
             Console.ForegroundColor = ColorPrimary;
             Console.Write("    >> Select Option: ");
@@ -87,7 +91,6 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             return new Contact(fName, lName, addr, city, state, zip, phone, email);
         }
 
-        // Helper to get simple one-line input (like Book Name)
         public static string GetInput(string prompt)
         {
             Console.WriteLine();
@@ -115,6 +118,36 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             string email = InputEditField("Email", existing.eMail);
 
             return new Contact(fName, lName, addr, city, state, zip, phone, email);
+        }
+
+        // --- NEW HELPER: Displays Search Results ---
+        public static void PrintSearchResults(Contact[] results)
+        {
+            PrintLogo();
+            Console.WriteLine("    --- SEARCH RESULTS ---");
+            Console.WriteLine();
+
+            bool foundAny = false;
+            int count = 1;
+
+            if (results != null)
+            {
+                foreach (Contact c in results)
+                {
+                    if (c != null)
+                    {
+                        Console.WriteLine($"    [{count++}] {c.firstName} {c.lastName} | Phone: {c.phoneNumber} | {c.city}, {c.state}");
+                        foundAny = true;
+                    }
+                }
+            }
+
+            if (!foundAny)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("    [!] No contacts found matching that criteria.");
+                Console.ResetColor();
+            }
         }
 
         private static string InputField(string label)

@@ -58,7 +58,21 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
                         Utility.WaitForKey();
                         break;
 
-                    case "4": // EXIT
+                    case "4": // SEARCH BY CITY
+                        string cityQuery = Utility.GetInput("Enter City to Search");
+                        Contact[] cityResults = bookManager.findByCity(bookShelf, cityQuery);
+                        Utility.PrintSearchResults(cityResults);
+                        Utility.WaitForKey();
+                        break;
+
+                    case "5": // SEARCH BY STATE
+                        string stateQuery = Utility.GetInput("Enter State to Search");
+                        Contact[] stateResults = bookManager.findByState(bookShelf, stateQuery);
+                        Utility.PrintSearchResults(stateResults);
+                        Utility.WaitForKey();
+                        break;
+
+                    case "6": // EXIT
                         appRunning = false;
                         break;
 
