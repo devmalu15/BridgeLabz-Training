@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -70,6 +71,19 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
                 
             }
             return null;
+        }
+
+        public void DeleteContact(AddressBook addressBook, Contact contact)
+        {
+            for(int i = 0; i < maxLen; i++)
+            {
+                if (addressBook.contacts[i] == contact)
+                {
+                    addressBook.contacts[i] = null;
+                    break;
+                }
+       
+            }
         }
     }
 }

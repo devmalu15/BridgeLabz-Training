@@ -27,23 +27,23 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 
                 switch (choice)
                 {
-                    case "1":
+                    case "1": // ADD
                         Contact newContact = Utility.CreateContactWithUI();
                         addressable.AddContact(myBook, newContact);
                         Utility.WaitForKey();
                         break;
 
-                    case "2":
-                        string searchName = Utility.GetSearchName();
-                        Contact foundContact = addressable.ShowContact(myBook, searchName);
+                    case "2": // EDIT
+                        string searchNameEdit = Utility.GetSearchName();
+                        Contact contactToEdit = addressable.ShowContact(myBook, searchNameEdit);
 
-                        if (foundContact != null)
+                        if (contactToEdit != null)
                         {
-                            Contact updatedVars = Utility.GetUpdatedContactDetails(foundContact);
+                            Contact updatedVars = Utility.GetUpdatedContactDetails(contactToEdit);
 
                             addressable.EditContact(
                                 myBook,
-                                foundContact,
+                                contactToEdit,
                                 updatedVars.firstName,
                                 updatedVars.lastName,
                                 updatedVars.address,
@@ -67,7 +67,31 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
                         Utility.WaitForKey();
                         break;
 
-                    case "3":
+                    case "3": // DELETE
+                        string searchNameDelete = Utility.GetSearchName();
+
+                        // 1. Find the contact first
+                        Contact contactToDelete = addressable.ShowContact(myBook, searchNameDelete);
+
+                        if (contactToDelete != null)
+                        {
+                            // 2. Pass the found object to DeleteContact
+                            addressable.DeleteContact(myBook, contactToDelete);
+
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"\n    [!] Contact '{searchNameDelete}' deleted successfully.");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\n    [!] Contact not found. Cannot delete.");
+                            Console.ResetColor();
+                        }
+                        Utility.WaitForKey();
+                        break;
+
+                    case "4": // EXIT
                         isRunning = false;
                         break;
 

@@ -9,7 +9,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 {
     public class Utility
     {
-        private static string Version = "1.3";
+        private static string Version = "1.4"; // Updated Version
         private static ConsoleColor ColorPrimary = ConsoleColor.Cyan;
         private static ConsoleColor ColorSecondary = ConsoleColor.Magenta;
         private static ConsoleColor ColorText = ConsoleColor.White;
@@ -42,7 +42,8 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             Console.ForegroundColor = ColorText;
             Console.WriteLine("    [1] ADD New Contact");
             Console.WriteLine("    [2] EDIT Existing Contact");
-            Console.WriteLine("    [3] EXIT");
+            Console.WriteLine("    [3] DELETE Contact"); // New Option
+            Console.WriteLine("    [4] EXIT");
             Console.WriteLine();
             Console.ForegroundColor = ColorPrimary;
             Console.Write("    >> Select Option: ");
@@ -78,7 +79,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
         {
             Console.WriteLine();
             Console.ForegroundColor = ColorSecondary;
-            Console.Write("    >> Enter Full Name to Search (e.g. John Doe): ");
+            Console.Write("    >> Enter Full Name (e.g. John Doe): ");
             Console.ResetColor();
             return Console.ReadLine();
         }
