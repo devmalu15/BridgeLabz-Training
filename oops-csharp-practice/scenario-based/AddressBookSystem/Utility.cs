@@ -9,7 +9,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 {
     public class Utility
     {
-        private static string Version = "1.0";
+        private static string Version = "1.2";
         private static ConsoleColor ColorPrimary = ConsoleColor.Cyan;
         private static ConsoleColor ColorSecondary = ConsoleColor.Magenta;
         private static ConsoleColor ColorText = ConsoleColor.White;
