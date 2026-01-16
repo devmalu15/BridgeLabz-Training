@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BridgeLabsTrainingVS.ScenarioBased.AddressBook;
 
 namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 {
     public class Utility
     {
-        private static string Version = "1.5"; // Updated Version
+        private static string Version = "1.6"; // Major update for Multi-Book support
         private static ConsoleColor ColorPrimary = ConsoleColor.Cyan;
         private static ConsoleColor ColorSecondary = ConsoleColor.Magenta;
         private static ConsoleColor ColorText = ConsoleColor.White;
@@ -37,13 +33,31 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             Console.WriteLine();
         }
 
-        public static void ShowMainMenu()
+        // --- LEVEL 1: BOOK MANAGEMENT MENU ---
+        public static void ShowBookMenu()
         {
+            Console.ForegroundColor = ColorText;
+            Console.WriteLine("    [1] CREATE New Address Book");
+            Console.WriteLine("    [2] OPEN Existing Address Book");
+            Console.WriteLine("    [3] DELETE Address Book");
+            Console.WriteLine("    [4] EXIT Application");
+            Console.WriteLine();
+            Console.ForegroundColor = ColorPrimary;
+            Console.Write("    >> Select Option: ");
+            Console.ResetColor();
+        }
+
+        // --- LEVEL 2: CONTACT MANAGEMENT MENU ---
+        public static void ShowContactMenu(string bookName)
+        {
+            PrintLogo();
+            Console.WriteLine($"    CURRENT BOOK: [ {bookName} ]");
+            Console.WriteLine("    ----------------------------------------------------------");
             Console.ForegroundColor = ColorText;
             Console.WriteLine("    [1] ADD New Contact");
             Console.WriteLine("    [2] EDIT Existing Contact");
-            Console.WriteLine("    [3] DELETE Contact"); // New Option
-            Console.WriteLine("    [4] EXIT");
+            Console.WriteLine("    [3] DELETE Contact");
+            Console.WriteLine("    [4] BACK to Main Menu");
             Console.WriteLine();
             Console.ForegroundColor = ColorPrimary;
             Console.Write("    >> Select Option: ");
@@ -56,7 +70,6 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             Console.ForegroundColor = ColorSecondary;
             Console.WriteLine("    --- ENTER CONTACT DETAILS ---");
             Console.WriteLine();
-
             string fName = InputField("First Name");
             string lName = InputField("Last Name");
             string addr = InputField("Address");
@@ -71,15 +84,15 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             Console.WriteLine("    [!] Capturing data...");
             System.Threading.Thread.Sleep(500);
             Console.ResetColor();
-
             return new Contact(fName, lName, addr, city, state, zip, phone, email);
         }
 
-        public static string GetSearchName()
+        // Helper to get simple one-line input (like Book Name)
+        public static string GetInput(string prompt)
         {
             Console.WriteLine();
             Console.ForegroundColor = ColorSecondary;
-            Console.Write("    >> Enter Full Name (e.g. John Doe): ");
+            Console.Write($"    >> {prompt}: ");
             Console.ResetColor();
             return Console.ReadLine();
         }
@@ -117,13 +130,8 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             Console.ForegroundColor = ColorPrimary;
             Console.Write($"    {label.PadRight(12)} [{currentValue}]: ");
             Console.ForegroundColor = ColorText;
-
             string input = Console.ReadLine();
-
-            if (string.IsNullOrWhiteSpace(input))
-            {
-                return currentValue;
-            }
+            if (string.IsNullOrWhiteSpace(input)) return currentValue;
             return input;
         }
 
