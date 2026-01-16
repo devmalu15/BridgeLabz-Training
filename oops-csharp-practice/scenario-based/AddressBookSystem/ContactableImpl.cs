@@ -17,13 +17,25 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             
             for(int i = 0; i < maxLen; i++)
             {
-                if (addressBook.contacts[i] == null)
+                if (addressBook.contacts[i] != null)
+                {
+                    if (addressBook.contacts[i].firstName + " " + addressBook.contacts[i].lastName == contact.firstName + " " + contact.lastName)
+                    {
+                        Console.WriteLine("Contact with this name already exists!");
+                        break;
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                else if (addressBook.contacts[i] == null)
                 {
                     addressBook.contacts[i] = contact;
                     Console.WriteLine("Contact Added...");
                     break;
                 }
-                else if(i == maxLen - 1)
+                else if (i == maxLen - 1)
                 {
                     Console.WriteLine("Contact List is Full, create another addressbook.");
                     break;
