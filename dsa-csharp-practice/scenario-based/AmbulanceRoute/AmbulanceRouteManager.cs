@@ -12,13 +12,13 @@ public class AmbulanceRouteManager : IHospitalNavigation
         {
             _head = newUnit;
             _tail = newUnit;
-            newUnit.Next = _head; // Points to itself to start the circle
+            newUnit.Next = _head; 
         }
         else
         {
             _tail.Next = newUnit;
             _tail = newUnit;
-            _tail.Next = _head; // Maintain the circle
+            _tail.Next = _head;
         }
         Console.WriteLine($"Unit Added: {name}");
     }
@@ -64,7 +64,7 @@ public class AmbulanceRouteManager : IHospitalNavigation
         if (startNode == null) return "Unknown starting point.";
 
         HospitalUnit current = startNode;
-        // Search through the circle once
+        
         do
         {
             if (current.IsAvailable)
