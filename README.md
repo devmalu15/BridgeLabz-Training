@@ -152,5 +152,5 @@
   <img src="https://img.shields.io/badge/Maintained%20By-Dev%20Malu-blue?style=flat-square" />
   <img src="https://img.shields.io/badge/Last%20Updated-Feb%2007%2C%202026-brightgreen?style=flat-square" />
   <br><br>
-  <sub><i>"Code is like humor. When you have to explain it, it’s bad."</i></sub>
+  <sub><i>"Code is just like humor. When you have to explain it, it’s bad."</i></sub>
 </div>
