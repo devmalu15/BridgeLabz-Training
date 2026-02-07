@@ -17,6 +17,9 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBook
         public String phoneNumber { get; set; }
         public String eMail { get; set; }
 
+        // Parameterless ctor required for JSON/CSV deserialization
+        public Contact() { }
+
         public Contact(string firstName, string lastName, string address, string city, string state, string zip, string phoneNumber, string eMail)
         {
             this.firstName = firstName;

@@ -117,6 +117,9 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
         // --- LEVEL 2: MANAGING CONTACTS INSIDE A BOOK ---
         private static void ManageBookContacts(AddressBook currentBook)
         {
+            // load persisted data if present (JSON preferred)
+            FileStore.LoadIfExists(currentBook);
+
             bool inBook = true;
             while (inBook)
             {
@@ -205,6 +208,10 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 
                     case "8": // BACK
                         inBook = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("    Invalid Option.");
                         break;
                 }
             }
