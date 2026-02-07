@@ -15,6 +15,8 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
         void DeleteContact(AddressBook addressBook, Contact contact);
 
         void SortContacts(AddressBook addressBook);
-
+        void SortContactsByCity(AddressBook addressBook);
+        void SortContactsByState(AddressBook addressBook);
+        void SortContactsByZip(AddressBook addressBook);
     }
 }

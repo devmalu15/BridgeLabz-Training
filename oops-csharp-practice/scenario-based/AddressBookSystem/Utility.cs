@@ -18,7 +18,6 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 
         public static void PrintLogo()
         {
-            Console.Clear();
             Console.ForegroundColor = ColorPrimary;
             Console.WriteLine(@"
       _   ___  ___  ___  ___  ___  ___    ___  ___  ___  _ __ 
@@ -65,8 +64,11 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
             Console.WriteLine("    [1] ADD New Contact");
             Console.WriteLine("    [2] EDIT Existing Contact");
             Console.WriteLine("    [3] DELETE Contact");
-            Console.WriteLine("    [4] SORT Contacts by Name"); // New Option
-            Console.WriteLine("    [5] BACK to Main Menu");
+            Console.WriteLine("    [4] SORT Contacts by Name");
+            Console.WriteLine("    [5] SORT Contacts by City");
+            Console.WriteLine("    [6] SORT Contacts by State");
+            Console.WriteLine("    [7] SORT Contacts by Zip");
+            Console.WriteLine("    [8] BACK to Main Menu");
             Console.WriteLine();
             Console.ForegroundColor = ColorPrimary;
             Console.Write("    >> Select Option: ");
@@ -211,7 +213,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
         {
             Console.WriteLine();
             Console.WriteLine("    Press any key to continue...");
-            Console.ReadKey();
+            Console.Read();
         }
     }
 }

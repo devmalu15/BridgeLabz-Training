@@ -130,5 +130,95 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
                 if (!swapped) break;
             }
         }
+
+        public void SortContactsByCity(AddressBook addressBook)
+        {
+            for (int i = 0; i < maxLen - 1; i++)
+            {
+                bool swapped = false;
+                for (int j = 0; j < maxLen - i - 1; j++)
+                {
+                    Contact c1 = addressBook.contacts[j];
+                    Contact c2 = addressBook.contacts[j + 1];
+
+                    if (c1 == null && c2 != null)
+                    {
+                        addressBook.contacts[j] = c2;
+                        addressBook.contacts[j + 1] = null;
+                        swapped = true;
+                    }
+                    else if (c1 != null && c2 != null)
+                    {
+                        if (string.Compare(c1.city, c2.city, StringComparison.OrdinalIgnoreCase) > 0)
+                        {
+                            addressBook.contacts[j] = c2;
+                            addressBook.contacts[j + 1] = c1;
+                            swapped = true;
+                        }
+                    }
+                }
+                if (!swapped) break;
+            }
+        }
+
+        public void SortContactsByState(AddressBook addressBook)
+        {
+            for (int i = 0; i < maxLen - 1; i++)
+            {
+                bool swapped = false;
+                for (int j = 0; j < maxLen - i - 1; j++)
+                {
+                    Contact c1 = addressBook.contacts[j];
+                    Contact c2 = addressBook.contacts[j + 1];
+
+                    if (c1 == null && c2 != null)
+                    {
+                        addressBook.contacts[j] = c2;
+                        addressBook.contacts[j + 1] = null;
+                        swapped = true;
+                    }
+                    else if (c1 != null && c2 != null)
+                    {
+                        if (string.Compare(c1.state, c2.state, StringComparison.OrdinalIgnoreCase) > 0)
+                        {
+                            addressBook.contacts[j] = c2;
+                            addressBook.contacts[j + 1] = c1;
+                            swapped = true;
+                        }
+                    }
+                }
+                if (!swapped) break;
+            }
+        }
+
+        public void SortContactsByZip(AddressBook addressBook)
+        {
+            for (int i = 0; i < maxLen - 1; i++)
+            {
+                bool swapped = false;
+                for (int j = 0; j < maxLen - i - 1; j++)
+                {
+                    Contact c1 = addressBook.contacts[j];
+                    Contact c2 = addressBook.contacts[j + 1];
+
+                    if (c1 == null && c2 != null)
+                    {
+                        addressBook.contacts[j] = c2;
+                        addressBook.contacts[j + 1] = null;
+                        swapped = true;
+                    }
+                    else if (c1 != null && c2 != null)
+                    {
+                        if (string.Compare(c1.zip, c2.zip, StringComparison.OrdinalIgnoreCase) > 0)
+                        {
+                            addressBook.contacts[j] = c2;
+                            addressBook.contacts[j + 1] = c1;
+                            swapped = true;
+                        }
+                    }
+                }
+                if (!swapped) break;
+            }
+        }
     }
 }

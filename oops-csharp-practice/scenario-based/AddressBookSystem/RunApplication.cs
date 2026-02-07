@@ -159,9 +159,9 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
                         Utility.WaitForKey();
                         break;
 
-                    case "4": // SORT Contacts (New Feature)
+                    case "4": // SORT Contacts by Name
                         contactManager.SortContacts(currentBook);
-                        Console.WriteLine("    [!] Contacts Sorted Successfully.");
+                        Console.WriteLine("    [!] Contacts Sorted by Name Successfully.");
                         Console.WriteLine("    --- SORTED LIST ---");
                         foreach (var c in currentBook.contacts)
                         {
@@ -170,7 +170,40 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
                         Utility.WaitForKey();
                         break;
 
-                    case "5": // BACK
+                    case "5": // SORT Contacts by City
+                        contactManager.SortContactsByCity(currentBook);
+                        Console.WriteLine("    [!] Contacts Sorted by City Successfully.");
+                        Console.WriteLine("    --- SORTED LIST ---");
+                        foreach (var c in currentBook.contacts)
+                        {
+                            if (c != null) Console.WriteLine($"    - {c.firstName} {c.lastName} ({c.city})");
+                        }
+                        Utility.WaitForKey();
+                        break;
+
+                    case "6": // SORT Contacts by State
+                        contactManager.SortContactsByState(currentBook);
+                        Console.WriteLine("    [!] Contacts Sorted by State Successfully.");
+                        Console.WriteLine("    --- SORTED LIST ---");
+                        foreach (var c in currentBook.contacts)
+                        {
+                            if (c != null) Console.WriteLine($"    - {c.firstName} {c.lastName} ({c.state})");
+                        }
+                        Utility.WaitForKey();
+                        break;
+
+                    case "7": // SORT Contacts by Zip
+                        contactManager.SortContactsByZip(currentBook);
+                        Console.WriteLine("    [!] Contacts Sorted by Zip Successfully.");
+                        Console.WriteLine("    --- SORTED LIST ---");
+                        foreach (var c in currentBook.contacts)
+                        {
+                            if (c != null) Console.WriteLine($"    - {c.firstName} {c.lastName} ({c.zip})");
+                        }
+                        Utility.WaitForKey();
+                        break;
+
+                    case "8": // BACK
                         inBook = false;
                         break;
                 }
