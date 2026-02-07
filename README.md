@@ -27,19 +27,40 @@
 
 ## 📅 Daily Progress Log
 
-> **Current Focus:** Collections, Generics, and Advanced Algorithms (Week 6)
+> **Current Focus:** Multithreading, Asynchronous Programming, and RDBMS Integration (Week 8)
 
-### 🔻 Current Week (Week 6)
+### 🔻 Current Week (Week 8)
 | Date | Topic | Key Learnings & Practical Work | Status |
 | :--- | :--- | :--- | :---: |
-| **Jan 19** | **Scenario Based and Generics** | Practice Problems on Generics and Solved Two scenario based problems i.e., ParcelTracker and ExamProctor. | ✅ |
-| **Jan 20** | **Scenario Based and Collections** | Practice Problems on Collections and Solved Two Scenario Based Problems i.e., AadharSorter (Radix Sort) and Password Cracking Simulator (BackTracking). | ✅ |
-| **Jan 21** | **Scenario Based and Streams** | Practice Problems on Streams and Solved Two Scenario Based Problems i.e., EduResult and SmartCheckout. | ✅ |
+| **Feb 02** | **Scenario Based** | Solved one scenario based problem i.e., FlipKeyLogical. | ✅ |
+| **Feb 03** | **Scenario Based** | Solved one Scenario Based Problem i.e., RobotHazardAnalysis. | ✅ |
+| **Feb 04** | **Scenario Based and Multithreading** | Read material on Multithreading and Solved one Scenario Based Problem i.e., AddressBook upto UC15 V1.15. | ✅ |
+| **Feb 05** | **Scenario Based and Delegates,Events** | Read material on Delegates, Events and Async. | ✅ |
+| **Feb 06** | **Scenario Based and MSSql SetUp** | Solved practice commands of MSSql on MSSMS and Set Up. | ✅ |
+| **Feb 07** | **Scenario Based and DBMS(MSSql)** | Worked on connecting MSSql with the .NET Backend. | ✅ |
 
 <br>
 
 <details>
 <summary><h3>📂 Archive: Previous Weeks (Click to Expand)</h3></summary>
+
+#### Week 7:
+| Date | Topic | Key Learnings & Practical Work | Status |
+| :--- | :--- | :--- | :---: |
+| **Jan 27** | **Scenario Based and MSTesting** | Practice Problems on MSTest and Solved one scenario based problem i.e., HealthCheckPro. | ✅ |
+| **Jan 28** | **Scenario Based and CSV Data Handling** | Practice Problems on CSV Data Handling and Solved two Scenario Based Problems i.e., AeroVigil and Bank Account Validation. | ✅ |
+| **Jan 29** | **Scenario Based and JSON Data Handling** | Practice Problems on Streams and Solved Two Scenario Based Problems i.e., StreamBus and OceanFleet. | ✅ |
+| **Jan 30** | **Scenario Based** | Solved two scenario based problem i.e., Lexical Twist and Future Logistics. | ✅ |
+  
+#### Week 6:
+| Date | Topic | Key Learnings & Practical Work | Status |
+| :--- | :--- | :--- | :---: |
+| **Jan 19** | **Scenario Based and Generics** | Practice Problems on Generics and Solved Two scenario based problems i.e., ParcelTracker and ExamProctor. | ✅ |
+| **Jan 20** | **Scenario Based and Collections** | Practice Problems on Collections and Solved Two Scenario Based Problems i.e., AadharSorter (Radix Sort) and Password Cracking Simulator (BackTracking). | ✅ |
+| **Jan 21** | **Scenario Based and Streams** | Practice Problems on Streams and Solved Two Scenario Based Problems i.e., EduResult and SmartCheckout. | ✅ |
+| **Jan 22** | **Scenario Based and Exception Handling** | Practice Problems on Exception Handling and Solved one scenario based problem i.e., AmbulanceRoute. | ✅ |
+| **Jan 23** | **Regex and NUnit** | Practice Problems on Regex and NUnit. | ✅ |
+| **Jan 24** | **Annotations and Reflections** | Practice Problems on Annotations and Reflections. | ✅ |
 
 #### Week 5:
 | Date | Topic | Key Learnings & Practical Work | Status |
@@ -92,33 +113,25 @@
 </details>
 
 ---
-
 ## 🧩 Projects & Assignments
 
 ### 🔹 Projects (Scenario Based)
 | Project Name | Description | Tech Stack | Repository Link |
 | :--- | :--- | :--- | :---: |
+| **Safety & Logic Labs** | Implemented **FlipKeyLogical** and **RobotHazardAnalysis** for complex industrial scenario modeling. | C# | [Link](#) |
+| **AddressBook Evolution** | Scaled the **Address Book** system to **UC15 (V1.15)** integrating advanced data management. | C# | [Link](#) |
+| **DB Integrated Suite** | Built a connection layer to bridge the **.NET Backend** with an **MSSql** database for persistent storage. | C#, MSSql | [Link](#) |
 | **Real-World System Simulations** | Implemented **EduResult** (Merge Sort), **SmartCheckout** (Queue/Map), **ParcelTracker**, and **ExamProctor** using Generics. | C# | [Link](#) |
 | **Algorithm & Security Labs** | Developed **AadharSorter** using Radix Sort logic and a **Password Cracking Simulator** using Backtracking. | C# | [Link](#) |
-| **Digital Utility Suite** | Built a comprehensive **Address Book** (11 Versions), **BrowserBuddy** (Stack logic), and **Traffic Manager**. | C# | [Link](#) |
-| **Algorithm Optimization Suite** | Implemented logic for **Metal Factory, Custom Furniture, LoanBuddy, CinemaTime, and BookBuddy** focusing on search efficiency. | C#| [Link](#) |
-| **Fitness & Finance Mgr** | Created **FitTrack**, **FlashDealz**, and **ATM Dispenser** systems to handle logical data flow and user transactions. | C# | [Link](#) |
-| **Smart System Simulations** | Developed **Smart Home Automation**, **Bird Sanctuary**, and **Customer Service Log** to model real-world entities. | C# | [Link](#) |
-| **Employee Mgmt System** | Built **EmployeeWage**, **Vehicle Rental**, and **Hospital Management** systems focusing on data encapsulation. | C# | [Link](#) |
-| **E-Commerce & Utils** | Developed **Amazon Pay Gateway**, **Invoice Generator**, **Maths Utility**, and **Cafeteria Menu App**. | C# | [Link](#) |
-| **Banking & Edu Systems** | Implemented **Banking System**, **Library Management**, and **EduQuiz** utilizing constructors and object modeling. | C# | [Link](#) |
-| **Console Games** | Developed interactive **Snake & Ladder** and **Festive Lucky Draw** games. | C# | [Link](#) |
 
 ### 🔸 Assignments (Practice Problems)
 | Assignment Topic | Description | Tech Stack | Repository Link |
 | :--- | :--- | :--- | :---: |
+| **Async & Event-Driven** | Practice problems on **Delegates, Events, and Async/Await** for asynchronous workflows. | C# | [Link](#) |
+| **RDBMS Foundations** | SQL command drills in **MSSMS** covering DDL, DML, and database schema setup. | MSSql | [Link](#) |
+| **Concurrent Execution** | Theoretical and practical exploration of **Multithreading** in the .NET environment. | C# | [Link](#) |
 | **Advanced C# Features** | Practice problems covering **Generics**, **Collection Interfaces**, and **Stream API** operations. | C# | [Link](#) |
-| **Complex Algorithms** | Implementations of **Radix Sort**, **Backtracking**, and scenario-based optimization logic. | C# | [Link](#) |
-| **Searching & Analysis** | Practice problems on Linear/Binary search and Big O analysis. | C# | [Link](#) |
-| **Data Structures** | Implementation and problems on **Stack, Queue, LinkedList, and HashMap**. | C# | [Link](#) |
 | **OOP Concepts** | Assignments covering **Encapsulation, Inheritance, Constructors, Access Modifiers**. | C# | [Link](#) |
-| **C# Keywords** | Drills on `this`, `sealed`, `static` keywords and Type Casting. | C# | [Link](#) |
-| **Core Logic** | 100+ problems covering **Arrays, Strings, Methods, Loops, and If-Else**. | C# | [Link](#) |
 
 ---
 
@@ -126,18 +139,18 @@
 
 > **"Moving beyond syntax to architecture."**
 
-* **Generics & Type Safety:** Mastered using Generics (`<T>`) to write flexible, reusable code while maintaining type safety and performance (avoiding expensive boxing/unboxing operations).
-* **Strategic Collection Use:** Refined the ability to select the perfect data structure—using `HashSet` for unique constraints (AddressBook), `Dictionary` for O(1) lookups (SmartCheckout), and `PriorityQueue` for triage systems.
-* **Algorithmic Nuance:** Moved beyond standard sorting to implement **Radix Sort** (non-comparison based) for large integer datasets and **Backtracking** for solving complex constraint satisfaction problems.
-* **Stream Processing:** Gained insight into I/O Streams for handling file data efficiently, understanding the difference between buffered processing and loading entire datasets into memory.
-* **Iterative System Design:** The **Address Book (11 Versions)** project highlighted the importance of modular architecture and iterative development—starting small and scaling features without breaking existing logic.
+* **Non-Blocking Programming:** Mastered **Delegates, Events, and Async/Await** to create systems that remain responsive while performing heavy operations.
+* **Persistent Data Connectivity:** Transitioned from volatile memory to persistent storage by integrating **MSSql** into the .NET backend architecture.
+* **Parallel Processing:** Gained insights into **Multithreading** to manage concurrent tasks efficiently, a key step for scalable application development.
+* **Iterative Scalability:** The **Address Book (UC15)** project proved that a modular approach allows for seamless expansion of features without breaking legacy logic.
+* **Strategic Collection Use:** Refined the ability to select the perfect data structure—using `HashSet` for unique constraints and `Dictionary` for high-performance lookups.
 
 ---
 
 <div align="center">
-  <br>
-  <img src="https://img.shields.io/badge/Maintained%20By-Dev%20Malu-blue?style=flat-square" />
-  <img src="https://img.shields.io/badge/Last%20Updated-Jan%2021%2C%202026-orange?style=flat-square" />
-  <br><br>
-  <sub><i>"Code is like humor. When you have to explain it, it’s bad."</i></sub>
+  <br>
+  <img src="https://img.shields.io/badge/Maintained%20By-Dev%20Malu-blue?style=flat-square" />
+  <img src="https://img.shields.io/badge/Last%20Updated-Feb%2007%2C%202026-brightgreen?style=flat-square" />
+  <br><br>
+  <sub><i>"Code is like humor. When you have to explain it, it’s bad."</i></sub>
 </div>
