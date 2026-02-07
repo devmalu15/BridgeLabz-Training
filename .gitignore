@@ -1,0 +1,25 @@
+# Build and Debug Folders (CRITICAL to ignore)
+bin/
+obj/
+debug/
+release/
+
+# Visual Studio / VS Code specific files
+.vs/
+.vscode/
+*.user
+*.suo
+*.userprefs
+*.launch
+
+# Test Results
+TestResults/
+*.tr*
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# NuGet Packages (if using local packages)
+*.nupkg
+packages/
