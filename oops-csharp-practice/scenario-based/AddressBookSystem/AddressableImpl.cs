@@ -20,8 +20,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
                     {
                         return books[i];
                     }
-                }
-                
+                }   
             }
             return null;
         }
@@ -162,7 +161,6 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
                     }
                 }
             }
-
             return count;
         }
 

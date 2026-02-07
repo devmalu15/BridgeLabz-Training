@@ -3,6 +3,7 @@ using BridgeLabsTrainingVS.ScenarioBased.AddressBook;
 
 namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 {
+    
     public class RunApplication
     {
         // Storage for multiple books

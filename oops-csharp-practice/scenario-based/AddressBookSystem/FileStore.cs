@@ -10,6 +10,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 {
     public static class FileStore
     {
+        
         private static string GetDataDir()
         {
             string dir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "AddressBookData");

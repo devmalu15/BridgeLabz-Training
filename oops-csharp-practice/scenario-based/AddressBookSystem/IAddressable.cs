@@ -7,6 +7,7 @@ using BridgeLabsTrainingVS.ScenarioBased.AddressBook;
 
 namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 {
+    
     public interface IAddressable
     {
         AddressBook FindBook(AddressBook[] books, String bookName);

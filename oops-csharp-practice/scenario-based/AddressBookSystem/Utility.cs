@@ -3,6 +3,7 @@ using BridgeLabsTrainingVS.ScenarioBased.AddressBook;
 
 namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 {
+    
     public class Utility
     {
         private static string Version = "1.15";

@@ -9,6 +9,7 @@ namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 {
     public class AddressBook
     {
+        
         public String bookName { get; set; }
         public Contact[] contacts { get; set; }
 

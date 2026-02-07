@@ -7,6 +7,7 @@ using BridgeLabsTrainingVS.ScenarioBased.AddressBook;
 
 namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 {
+    
     public interface IContactable
     {
         void AddContact(AddressBook addressBook, Contact contact);
