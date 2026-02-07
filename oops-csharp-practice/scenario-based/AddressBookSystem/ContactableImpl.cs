@@ -7,6 +7,7 @@ using BridgeLabsTrainingVS.ScenarioBased.AddressBook;
 
 namespace BridgeLabsTrainingVS.ScenarioBased.AddressBookSystem
 {
+    
     public class ContactableImpl : IContactable
     {
         int maxLen = 1000;
