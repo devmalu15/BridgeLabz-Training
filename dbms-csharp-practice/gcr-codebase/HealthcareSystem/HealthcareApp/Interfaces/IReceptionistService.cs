@@ -2,5 +2,7 @@ using System;
 
 public interface IReceptionist
 {
-    public void AddPatient(Patient patient);
+    public Task AddPatient(Patient patient);
+
+    public Task UpdatePatient(String contact, Patient updatedPatient);
 }
