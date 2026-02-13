@@ -7,7 +7,6 @@ public class Doctor
     public String speciality {get; set;}
     public int salary {get; set;}
     public double experience {get; set;}
-
     public String contact {get; set;}
 
 

@@ -46,7 +46,7 @@ public class RunApplication
         // {
         //     String str = await sharedService.SearchPatientByNameAsync("risita");
         //     Console.WriteLine(str);
-            
+
         // }
         // catch(UserNotFoundException ex)
         // {
@@ -83,16 +83,35 @@ public class RunApplication
         //     Console.WriteLine(ex.Message);
         // }
 
-        Doctor doctor = new Doctor(null, "dr.jony", "multispecialist", 100000, 10, "8688767899");
+        // Doctor doctor = new Doctor(null, "dr.jony", "multispecialist", 100000, 10, "8688767899");
+
+        // try
+        // {
+        //     await adminService.AddDoctorAsync(doctor);
+        // }
+        // catch(DuplicateUserException ex)
+        // {
+        //     Console.WriteLine(ex.Message);
+        // } 
 
         try
         {
-            await adminService.AddDoctorAsync(doctor);
+            await adminService.UpdateSpecialityAsync("8688767899", "multispecialist");
         }
-        catch(DuplicateUserException ex)
+        catch(UserNotFoundException ex)
         {
             Console.WriteLine(ex.Message);
-        } 
+        }
+
+        try
+        {
+            await adminService.UpdateSpecialityAsync("8688767891", "multispecialist");
+        }
+        catch(UserNotFoundException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        
         
 
     }
