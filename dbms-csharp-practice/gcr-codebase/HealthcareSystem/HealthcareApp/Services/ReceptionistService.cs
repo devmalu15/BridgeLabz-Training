@@ -3,7 +3,7 @@ using Microsoft.Data.SqlClient;
 
 public class ReceptionistService : IReceptionist
 {
-    public async Task AddPatient(Patient patient)
+    public async Task AddPatientAsync(Patient patient)
     {
 
         DBConnection database = new DBConnection();
@@ -40,7 +40,7 @@ public class ReceptionistService : IReceptionist
 
     }
 
-    public async Task UpdatePatient(String contact, Patient updatedPatient)
+    public async Task UpdatePatientAsync(String contact, Patient updatedPatient)
     {
         
         DBConnection database = new DBConnection();

@@ -1,29 +1,79 @@
 using System;
+using Microsoft.Data.SqlClient;
 
 public class RunApplication
 {
-    public static void Main(String[] args)
+    public static async Task Main(String[] args)
     {
         IReceptionist receptionist = new ReceptionistService();
 
-        Patient patient = new Patient(null, "Gavendra", "B+", new DateOnly(2000, 8, 5), "G.T. Road", "9689593995");
+        ISharedService sharedService = new SharedService();
+
+        Patient patient = new Patient(null, "risita", "B+", new DateOnly(2000, 8, 8), "hazratpur", "9689593996");
         try{
-            receptionist.AddPatient(patient);
+            await receptionist.AddPatientAsync(patient);
         }
         catch(DuplicateUserException ex)
         {
             Console.WriteLine(ex.Message);
         } 
 
-        Patient updatedPatient = new Patient(null, "Gavendra", "B+", new DateOnly(2000, 8, 18), "G.T. Road", "9689593995");
+        Patient updatedPatient = new Patient(null, "Gavendra", "B+", new DateOnly(2000, 8, 27), "G.T. Road", "9689593995");
 
         try
         {
-            receptionist.UpdatePatient("9689593995", updatedPatient);
+            await receptionist.UpdatePatientAsync("9689593999", updatedPatient);
         }
         catch(UserNotFoundException ex)
         {
             Console.WriteLine(ex.Message);
         }
+
+        try
+        {
+            string str =await sharedService.SearchPatientByNameAsync("lovis");
+            Console.WriteLine(str);
+
+        }
+        catch(UserNotFoundException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+        try
+        {
+            String str = await sharedService.SearchPatientByNameAsync("risita");
+            Console.WriteLine(str);
+            
+        }
+        catch(UserNotFoundException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+        try
+        {
+            String str = await sharedService.SearchPatientByContactAsync("9689593995");
+            Console.WriteLine(str);
+        }
+        catch(UserNotFoundException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+        try
+        {
+            String str = await sharedService.SearchPatientByContactAsync("2345678967");
+            Console.WriteLine(str);
+        }
+        catch(UserNotFoundException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        
+        
+        
+        
+
     }
 }

@@ -2,7 +2,9 @@ using System;
 
 public interface IReceptionist
 {
-    public Task AddPatient(Patient patient);
+    public Task AddPatientAsync(Patient patient);
 
-    public Task UpdatePatient(String contact, Patient updatedPatient);
+    public Task UpdatePatientAsync(String contact, Patient updatedPatient);
+
+    
 }
