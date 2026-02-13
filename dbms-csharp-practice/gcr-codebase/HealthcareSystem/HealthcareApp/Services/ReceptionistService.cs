@@ -29,7 +29,7 @@ public class ReceptionistService : IReceptionist
             command.Parameters.Add("@Address", System.Data.SqlDbType.NVarChar).Value = patient.address;
             command.Parameters.Add("@Contact", System.Data.SqlDbType.NVarChar).Value = patient.contact;
 
-            await command.ExecuteNonQueryAsync();
+            command.ExecuteNonQuery();
             database.CloseConnection(connection);
         }
         else
@@ -65,7 +65,7 @@ public class ReceptionistService : IReceptionist
             command.Parameters.Add("@Address", System.Data.SqlDbType.NVarChar).Value = updatedPatient.address;
             command.Parameters.Add("@contact", System.Data.SqlDbType.NVarChar).Value = contact;
 
-            await command.ExecuteNonQueryAsync();
+            command.ExecuteNonQuery();
             database.CloseConnection(connection);
         }
         else

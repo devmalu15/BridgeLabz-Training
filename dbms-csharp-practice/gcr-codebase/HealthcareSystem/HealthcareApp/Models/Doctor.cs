@@ -8,14 +8,17 @@ public class Doctor
     public int salary {get; set;}
     public double experience {get; set;}
 
+    public String contact {get; set;}
 
-    public Doctor(String docID, String docName, String speciality, int salary, double experience)
+
+    public Doctor(String docID, String docName, String speciality, int salary, double experience, String contact)
     {
         this.docID = docID;
         this.docName = docName;
         this.speciality = speciality;
         this.salary = salary;
         this.experience = experience;
+        this.contact = contact;
     }
 
 }

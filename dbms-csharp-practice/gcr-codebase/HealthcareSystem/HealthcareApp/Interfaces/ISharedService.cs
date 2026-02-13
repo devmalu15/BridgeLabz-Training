@@ -8,5 +8,7 @@ public interface ISharedService
 
     public Task<String> SearchPatientByContactAsync(String patientContact);
 
+    public Task<String> PatientHistoryAsync(String patientContact);
+
     
 }

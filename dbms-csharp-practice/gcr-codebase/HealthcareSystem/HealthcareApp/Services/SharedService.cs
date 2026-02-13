@@ -71,4 +71,37 @@ public class SharedService : ISharedService
             return resultString.ToString();
         }
     }
+
+    public async Task<String> PatientHistoryAsync(String patientContact)
+    {
+        StringBuilder resultString = new StringBuilder();
+
+        DBConnection database = new DBConnection();
+
+        using SqlConnection connection = database.OpenConnection();
+
+        String query = "SELECT * FROM Patients JOIN Appointments ON Patients.PatientID = Appointments.PatientID WHERE Patients.Contact = @Contact";
+
+        using SqlCommand command = new SqlCommand(query, connection);
+
+        command.Parameters.Add("@Contact", System.Data.SqlDbType.NVarChar).Value = patientContact;
+
+        SqlDataReader reader = command.ExecuteReader();
+
+        while (reader.Read())
+        {
+            resultString.Append(reader["PatientName"]);
+        }
+
+        if(resultString.Length == 0)
+        {
+            database.CloseConnection(connection);
+            throw new UserNotFoundException("User with this number does not exist!");
+        }
+        else
+        {
+            database.CloseConnection(connection);
+            return resultString.ToString();
+        }
+    }
 }
