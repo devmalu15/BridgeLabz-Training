@@ -29,7 +29,29 @@
 
 > **Current Focus:** Multithreading, Asynchronous Programming, and RDBMS Integration (Week 8)
 
-### 🔻 Current Week (Week 8)
+### 🔻 Current Weeks (Weeks 9 - 10)
+| Date | Topic | Key Learnings & Practical Work | Status |
+| :--- | :--- | :--- | :---: |
+| **Feb 09** | **SQL Triggers** | Implemented SQL Triggers. | ✅ |
+| **Feb 10** | **Mock Prep (M1)** | Solved 3 coding problems for BridgeLabz M1 Mock assessment. | ✅ |
+| **Feb 11** | **DB Connectivity** | Implemented data fetching using SQL Connection and Command in VS Code. | ✅ |
+| **Feb 12** | **Regex & Scenarios** | Solved multiple Regex problems. | ✅ |
+| **Feb 13** | **Concept Revision** | Attended Power Skills session, Revised inputs. | ✅ |
+| **Feb 14** | **Concept Revision** | Revised DSA, Testing, Regex, SQL, and File Handling. | ✅ |
+| **Feb 16** | **Scenario Based** | Implemented **Bank Transaction Processing System** with MSTest. | ✅ |
+| **Feb 17** | **ASP.NET Core Basics** | Learned ASP.NET Core fundamentals. | In-Progress |
+| **Feb 18** | **Mock** | Attempted **Capgemini M1 Mock**. | ✅ |
+| **Feb 19** | **Leave** | Leave | ✅ |
+| **Feb 20** | **Leave** | Leave | ✅ |
+| **Feb 21** | **Leave** | Leave | ✅ |
+
+<br>
+
+<details>
+<summary><h3>📂 Archive: Previous Weeks (Click to Expand)</h3></summary>
+
+
+### Week 8:
 | Date | Topic | Key Learnings & Practical Work | Status |
 | :--- | :--- | :--- | :---: |
 | **Feb 02** | **Scenario Based** | Solved one scenario based problem i.e., FlipKeyLogical. | ✅ |
@@ -38,11 +60,6 @@
 | **Feb 05** | **Scenario Based and Delegates,Events** | Read material on Delegates, Events and Async. | ✅ |
 | **Feb 06** | **Scenario Based and MSSql SetUp** | Solved practice commands of MSSql on MSSMS and Set Up. | ✅ |
 | **Feb 07** | **Scenario Based and DBMS(MSSql)** | Worked on connecting MSSql with the .NET Backend. | ✅ |
-
-<br>
-
-<details>
-<summary><h3>📂 Archive: Previous Weeks (Click to Expand)</h3></summary>
 
 #### Week 7:
 | Date | Topic | Key Learnings & Practical Work | Status |
